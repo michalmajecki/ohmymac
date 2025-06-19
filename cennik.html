@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+<link href="main.css" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cennik – Oh my Mac!</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3220ec',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    .logo-text {
+      font-family: 'Kaushan Script', cursive;
+      color: #3220ec;
+    }
+
+    .tab-btn {
+      @apply px-4 py-2 rounded-full text-sm font-medium transition border border-transparent bg-white text-gray-900 hover:border-primary hover:shadow hover:bg-primary/10;
+    }
+
+    .tab-btn.active {
+      @apply bg-primary text-white border-primary shadow-md;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+<link href="main.css" rel="stylesheet"/>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16 md:h-20">
+<div class="flex items-center">
+<a class="flex items-center" href="#" onclick="event.preventDefault(); scrollToSection('hero')">
+<span class="logo-text text-2xl md:text-3xl">Oh my Mac!</span>
+</a>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-gray-900 hover:text-primary transition-colors" href="#" onclick="event.preventDefault(); scrollToSection('about')">Kim jesteśmy?</a>
+<a class="text-gray-900 hover:text-primary transition-colors" href="#" onclick="event.preventDefault(); scrollToSection('services')">Oferowane usługi</a>
+<a class="text-gray-900 hover:text-primary transition-colors" href="#" onclick="event.preventDefault(); scrollToSection('support')">Wsparcie</a>
+<a class="text-gray-900 hover:text-primary transition-colors" href="#" onclick="event.preventDefault(); scrollToSection('contact')">Kontakt</a>
+<a class="text-gray-900 hover:text-primary transition-colors" href="cennik.html">Cennik</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a class="hidden md:flex items-center text-gray-900 hover:text-primary transition-colors" href="tel:+48123456789">
+<i class="fas fa-phone-alt mr-2"></i>
+<span>+48 123 456 789</span>
+</a>
+<button class="md:hidden p-2 text-gray-900" id="mobile-menu-button">
+<i class="fas fa-bars text-xl"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile menu -->
+<div class="md:hidden hidden bg-white border-t border-gray-200" id="mobile-menu">
+<div class="px-4 py-3 space-y-3">
+<a class="block py-2 text-gray-900 hover:text-primary" href="#" onclick="event.preventDefault(); scrollToSection('about'); toggleMobileMenu()">Kim jesteśmy?</a>
+<a class="block py-2 text-gray-900 hover:text-primary" href="#" onclick="event.preventDefault(); scrollToSection('services'); toggleMobileMenu()">Oferowane
+                    usługi</a>
+<a class="block py-2 text-gray-900 hover:text-primary" href="#" onclick="event.preventDefault(); scrollToSection('support'); toggleMobileMenu()">Wsparcie</a>
+<a class="block py-2 text-gray-900 hover:text-primary" href="#" onclick="event.preventDefault(); scrollToSection('contact'); toggleMobileMenu()">Kontakt</a>
+<a class="block py-2 text-gray-900 hover:text-primary" href="cennik.html">Cennik</a>
+<a class="block py-2 text-gray-900 hover:text-primary" href="tel:+48123456789">
+<i class="fas fa-water text-3xl text-primary mb-3"></i>
+<span>+48 123 456 789</span>
+</a>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<h1 class="text-4xl font-bold text-center mb-6">Cennik napraw iPhone</h1>
+<p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+      Wybierz model i sprawdź szczegóły usług. Ceny orientacyjne – dokładna wycena po diagnozie.
+    </p>
+<div class="flex flex-wrap justify-center gap-3 mb-10">
+<button class="model-tab active" data-key="16" onclick="showModel('16', this)">iPhone 16</button>
+<button class="model-tab" data-key="15" onclick="showModel('15', this)">iPhone 15</button>
+<button class="model-tab" data-key="14" onclick="showModel('14', this)">iPhone 14</button>
+<button class="model-tab" data-key="13" onclick="showModel('13', this)">iPhone 13</button>
+<button class="model-tab" data-key="12" onclick="showModel('12', this)">iPhone 12</button>
+<button class="model-tab" data-key="SE" onclick="showModel('SE', this)">iPhone SE</button>
+<button class="model-tab" data-key="X" onclick="showModel('X', this)">iPhone X / XR / XS</button>
+<button class="model-tab" data-key="8" onclick="showModel('8', this)">iPhone 8 / 7 / 6</button>
+</div>
+<div class="grid md:grid-cols-3 gap-6" id="modelContent">
+<!-- kafelki będą aktualizowane dynamicznie -->
+</div>
+<section class="mt-20" id="macbook">
+<h2 class="text-2xl font-bold text-center mb-6">Naprawa MacBook</h2>
+<div class="flex flex-wrap justify-center gap-3 mb-6">
+<button class="model-tab active" onclick="showMacbookModel('Pro 2009–2012', this)">Pro
+          2009–2012</button>
+<button class="model-tab" onclick="showMacbookModel('Pro 2013–2015', this)">Pro 2013–2015</button>
+<button class="model-tab" onclick="showMacbookModel('Pro 2017–2019', this)">Pro 2017–2019</button>
+<button class="model-tab" onclick="showMacbookModel('Pro 2020...', this)">Pro 2020...</button>
+</div>
+<div class="grid md:grid-cols-3 gap-6" id="modelContent-macbook">
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-water text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Zalanie</h3>
+<p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">199
+            zł</a>
+</div>
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-arrows-rotate text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+<p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">449
+            zł</a>
+</div>
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-circle-info text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Nagrzewanie</h3>
+<p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">149
+            zł</a>
+</div>
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-power-off text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Nie uruchamia się</h3>
+<p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">149
+            zł</a>
+</div>
+</div>
+</section>
+<section class="mt-20" id="ipad">
+<h2 class="text-2xl font-bold text-center mb-6">Naprawa iPad</h2>
+<div class="flex flex-wrap justify-center gap-3 mb-6">
+<button class="model-tab active" data-key="pro9.7" onclick="showIpadModel('iPad Pro 9.7', this)">iPad Pro
+          9.7</button>
+<button class="model-tab" data-key="pro10.5" onclick="showIpadModel('iPad Pro 10.5', this)">iPad Pro
+          10.5</button>
+<button class="model-tab" data-key="pro11" onclick="showIpadModel('iPad Pro 11', this)">iPad Pro 11</button>
+<button class="model-tab" data-key="pro12.9" onclick="showIpadModel('iPad Pro 12.9', this)">iPad Pro
+          12.9</button>
+</div>
+<div class="grid md:grid-cols-3 gap-6" id="modelContent-ipad">
+<!-- kafelki będą uzupełnione przez JS -->
+</div>
+</section>
+<section class="mt-20" id="imac">
+<h2 class="text-2xl font-bold text-center mb-6">Naprawa iMac</h2>
+<div class="flex flex-wrap justify-center gap-3 mb-6">
+<button class="model-tab active" onclick="showImacModel('21,5-calowy', this)">21,5-calowy</button>
+<button class="model-tab" onclick="showImacModel('24-calowy', this)">24-calowy</button>
+<button class="model-tab" onclick="showImacModel('27-calowy', this)">27-calowy</button>
+</div>
+<div class="grid md:grid-cols-3 gap-6" id="modelContent-imac">
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Głośna praca urządzenia</h3>
+<p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">249
+            zł</a>
+</div>
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-laptop text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">iMac nie reaguje na polecenia</h3>
+<p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">249
+            zł</a>
+</div>
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-power-off text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Problem z uruchamianiem systemu</h3>
+<p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">149
+            zł</a>
+</div>
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-eye-slash text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Brak obrazu</h3>
+<p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">249
+            zł</a>
+</div>
+</div>
+</section>
+<section class="mt-20" id="watch">
+<h2 class="text-2xl font-bold text-center mb-6">Naprawa Apple Watch</h2>
+<div class="flex flex-wrap justify-center gap-3 mb-6">
+<button class="model-tab active" onclick="showWatchModel('1 gen', this)">1 gen</button>
+<button class="model-tab" onclick="showWatchModel('2 gen', this)">2 gen</button>
+<button class="model-tab" onclick="showWatchModel('3 gen', this)">3 gen</button>
+<button class="model-tab" onclick="showWatchModel('4 gen', this)">4 gen</button>
+<button class="model-tab" onclick="showWatchModel('5 gen', this)">5 gen</button>
+<button class="model-tab" onclick="showWatchModel('6 gen', this)">6 gen</button>
+<button class="model-tab" onclick="showWatchModel('7 gen', this)">7 gen</button>
+<button class="model-tab" onclick="showWatchModel('SE', this)">SE</button>
+</div>
+<div class="grid md:grid-cols-3 gap-6" id="modelContent-watch"></div>
+</section>
+<section class="mt-20" id="macmini">
+<h2 class="text-2xl font-bold text-center mb-6">Naprawa Mac Mini</h2>
+<div class="flex flex-wrap justify-center gap-3 mb-6">
+<button class="model-tab active" onclick="showMacMiniModel('2012', this)">2012</button>
+<button class="model-tab" onclick="showMacMiniModel('2014', this)">2014</button>
+<button class="model-tab" onclick="showMacMiniModel('2018', this)">2018</button>
+<button class="model-tab" onclick="showMacMiniModel('2020', this)">2020</button>
+</div>
+<div class="grid md:grid-cols-3 gap-6" id="modelContent-macmini"></div>
+</section>
+<section class="mt-20" id="macpro">
+<h2 class="text-2xl font-bold text-center mb-6">Naprawa Mac Pro</h2>
+<div class="flex flex-wrap justify-center gap-3 mb-6">
+<button class="model-tab active" onclick="showMacProModel('2009–2013', this)">2009–2013</button>
+<button class="model-tab" onclick="showMacProModel('2019', this)">2019</button>
+</div>
+<div class="grid md:grid-cols-3 gap-6" id="modelContent-macpro"></div>
+</section>
+<section class="mt-20" id="appletv">
+<h2 class="text-2xl font-bold text-center mb-6">Naprawa Apple TV</h2>
+<div class="flex flex-wrap justify-center gap-3 mb-6">
+<button class="model-tab active" onclick="showAppleTVModel('gen1', this)">1 gen</button>
+<button class="model-tab" onclick="showAppleTVModel('gen2', this)">2 gen</button>
+<button class="model-tab" onclick="showAppleTVModel('gen3', this)">3 gen</button>
+<button class="model-tab" onclick="showAppleTVModel('hd', this)">HD</button>
+<button class="model-tab" onclick="showAppleTVModel('4k', this)">4K</button>
+</div>
+<div class="grid md:grid-cols-3 gap-6" id="modelContent-appletv"></div>
+</section>
+<section class="mt-20" id="inne">
+<h2 class="text-2xl font-bold text-center mb-8">Inne</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-microchip text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Uszkodzona płyta główna?</h3>
+<p class="text-gray-500 text-sm mb-4">Urządzenie nie reaguje?</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">Zgłoś
+            naprawę płyty głównej</a>
+</div>
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-database text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Odzysk danych i wycena</h3>
+<p class="text-gray-500 text-sm mb-4">Masz uszkodzony dysk lub nośnik? </p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">Zgłoś
+            odzysk danych</a>
+</div>
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-arrows-rotate text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Wymiana starego sprzętu</h3>
+<p class="text-gray-500 text-sm mb-4">Odbierz zniżkę przy zakupie nowego </p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">Zapytaj
+            o wymianę Apple</a>
+</div>
+<div class="bg-white p-6 rounded-xl shadow text-center">
+<i class="fas fa-lock-open text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Problemy z odblokowaniem</h3>
+<p class="text-gray-500 text-sm mb-4">FaceID, TouchID, TrueTone?</p>
+<a class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90" href="index.html#contact">Zgłoś
+            naprawę funkcji</a>
+</div>
+</div>
+<div class="text-center mt-12">
+<p class="text-gray-600 mb-4">Nie widzisz swojego modelu lub masz pytanie?</p>
+<a class="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition" href="index.html#contact">Skontaktuj
+          się z
+          nami</a>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-white py-8 mt-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<p class="text-sm">© 2025 Oh my Mac! Wszystkie prawa zastrzeżone.</p>
+</div>
+</footer>
+<script>
+    const pricing = {
+      '16': {
+        screen: 'od 799 zł', battery: 'od 299 zł', water: 'od 249 zł', charging: 'od 149 zł', id: 'od 449 zł', case: 'od 549 zł'
+      },
+      '15': {
+        screen: 'od 699 zł', battery: 'od 279 zł', water: 'od 199 zł', charging: 'od 139 zł', id: 'od 429 zł', case: 'od 499 zł'
+      },
+      '14': {
+        screen: 'od 649 zł', battery: 'od 249 zł', water: 'od 179 zł', charging: 'od 129 zł', id: 'od 399 zł', case: 'od 479 zł'
+      },
+      '13': {
+        screen: 'od 599 zł', battery: 'od 229 zł', water: 'od 149 zł', charging: 'od 109 zł', id: 'od 379 zł', case: 'od 449 zł'
+      },
+      '12': {
+        screen: 'od 499 zł', battery: 'od 199 zł', water: 'od 149 zł', charging: 'od 109 zł', id: 'od 349 zł', case: 'od 399 zł'
+      },
+      'SE': {
+        screen: 'od 349 zł', battery: 'od 159 zł', water: 'od 129 zł', charging: 'od 89 zł', id: 'od 149 zł', case: 'od 299 zł'
+      },
+      'X': {
+        screen: 'od 449 zł', battery: 'od 179 zł', water: 'od 149 zł', charging: 'od 99 zł', id: 'od 299 zł', case: 'od 399 zł'
+      },
+      '8': {
+        screen: 'od 349 zł', battery: 'od 139 zł', water: 'od 99 zł', charging: 'od 89 zł', id: 'od 149 zł', case: 'od 349 zł'
+      },
+    };
+
+    function showModel(modelKey, btn) {
+      document.querySelectorAll('.model-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = pricing[modelKey];
+      const container = document.getElementById('modelContent');
+      container.innerHTML = `
+        
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+      <p class="text-gray-500 text-sm mb-4">Oryginalny lub zamiennik</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${data.screen}</a>
+    </div>
+    
+        
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+      <p class="text-gray-500 text-sm mb-4">Szybko i bezpiecznie</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${data.battery}</a>
+    </div>
+    
+        
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-water text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+      <p class="text-gray-500 text-sm mb-4">Diagnoza i czyszczenie</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${data.water}</a>
+    </div>
+    
+        
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+      <p class="text-gray-500 text-sm mb-4">Złącze, płyta główna</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${data.charging}</a>
+    </div>
+    
+        
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-fingerprint text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Face ID / Touch ID</h3>
+      <p class="text-gray-500 text-sm mb-4">Przywracanie działania</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${data.id}</a>
+    </div>
+    
+        
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+      <p class="text-gray-500 text-sm mb-4">Wgniecenia, pęknięcia</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${data.case}</a>
+    </div>
+    
+      `;
+    }
+    const macbookData = { "Pro 2009–2012": { "Zalanie": "199 zł", "Wymiana baterii": "449 zł", "Nagrzewanie": "149 zł", "Nie uruchamia się": "149 zł" }, "Pro 2013–2015": { "Zalanie": "249 zł", "Wymiana baterii": "499 zł", "Nagrzewanie": "149 zł", "Nie uruchamia się": "149 zł" }, "Pro 2017–2019": { "Zalanie": "269 zł", "Wymiana baterii": "599 zł", "Nagrzewanie": "149 zł", "Nie uruchamia się": "149 zł" }, "Pro 2020...": { "Zalanie": "299 zł", "Wymiana baterii": "699 zł", "Nagrzewanie": "149 zł", "Nie uruchamia się": "149 zł" } };
+
+    function showMacbookModel(model, btn) {
+      document.querySelectorAll('#macbook .model-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = macbookData[model];
+      const container = document.getElementById('modelContent-macbook');
+      const tiles = Object.entries(data).map(([name, price]) => `
+    
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-circle-info text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">${name}</h3>
+      <p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${price}</a>
+    </div>
+    
+  `).join('');
+      container.innerHTML = tiles;
+    }
+
+    // Init domyślny model
+
+
+    window.onload = () => {
+      const iph = document.querySelector('[onclick^="showModel"]');
+      if (iph) iph.click();
+      const ipd = document.querySelector('[onclick^="showIpadModel"]');
+      if (ipd) ipd.click();
+      const imc = document.querySelector('[onclick^="showImacModel"]');
+      if (imc) imc.click();
+      const mbk = document.querySelector('[onclick^="showMacbookModel"]');
+      if (mbk) mbk.click();
+      const wtc = document.querySelector('[onclick^="showWatchModel"]');
+      if (wtc) wtc.click();
+      const mmi = document.querySelector('[onclick^="showMacMiniModel"]');
+      if (mmi) mmi.click();
+      const mpr = document.querySelector('[onclick^="showMacProModel"]');
+      if (mpr) mpr.click();
+      const atv = document.querySelector('[onclick^="showAppleTVModel"]');
+      if (atv) atv.click();
+    };
+
+    function modelKeyFromLabel(label) {
+      const map = { '1 gen': 'gen1', '2 gen': 'gen2', '3 gen': 'gen3', 'HD': 'hd', '4K': '4k' };
+      return map[label] || 'gen1';
+    }
+
+  </script>
+<script>
+    const ipadData = { "iPad Pro 9.7": { "Zalanie": "149 zł", "Wymiana ekranu": "666 zł", "Wymiana baterii": "123 zł", "Problem z ładowaniem": "169 zł" }, "iPad Pro 10.5": { "Zalanie": "149 zł", "Wymiana ekranu": "333 zł", "Wymiana baterii": "444 zł", "Problem z ładowaniem": "189 zł" }, "iPad Pro 11": { "Zalanie": "149 zł", "Wymiana ekranu": "555 zł", "Wymiana baterii": "888 zł", "Problem z ładowaniem": "189 zł" }, "iPad Pro 12.9": { "Zalanie": "149 zł", "Wymiana ekranu": "999 zł", "Wymiana baterii": "111 zł", "Problem z ładowaniem": "249 zł" } };
+
+    function showIpadModel(model, btn) {
+      document.querySelectorAll('#ipad .model-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = ipadData[model];
+      const container = document.getElementById('modelContent-ipad');
+      const tiles = Object.entries(data).map(([name, price]) => `
+    
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-circle-info text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">${name}</h3>
+      <p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${price}</a>
+    </div>
+    
+  `).join('');
+      container.innerHTML = tiles;
+    }
+  </script>
+<script>
+    const imacData = { "21,5-calowy": { "Głośna praca urządzenia": "249 zł", "iMac nie reaguje na polecenia": "249 zł", "Problem z uruchamianiem systemu": "149 zł", "Brak obrazu": "249 zł" }, "24-calowy": { "Głośna praca urządzenia": "399 zł", "iMac nie reaguje na polecenia": "399 zł", "Problem z uruchamianiem systemu": "149 zł", "Brak obrazu": "349 zł" }, "27-calowy": { "Głośna praca urządzenia": "249 zł", "iMac nie reaguje na polecenia": "249 zł", "Problem z uruchamianiem systemu": "149 zł", "Brak obrazu": "249 zł" } };
+
+    function showImacModel(model, btn) {
+      document.querySelectorAll('#imac .model-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const data = imacData[model];
+      const container = document.getElementById('modelContent-imac');
+      const tiles = Object.entries(data).map(([name, price]) => `
+    
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-circle-info text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">${name}</h3>
+      <p class="text-gray-500 text-sm mb-4">Usługa serwisowa</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${price}</a>
+    </div>
+    
+  `).join('');
+      container.innerHTML = tiles;
+    }
+  </script>
+<script>
+    const watchData = {
+      '1 gen': {
+        '38mm': { 'Zalanie': '149 zł', 'Ekran': '499 zł', 'Bateria': '199 zł' },
+        '42mm': { 'Zalanie': '149 zł', 'Ekran': '499 zł', 'Bateria': '199 zł' }
+      },
+      '2 gen': {
+        '38mm': { 'Zalanie': '149 zł', 'Ekran': '599 zł', 'Bateria': '229 zł' },
+        '42mm': { 'Zalanie': '149 zł', 'Ekran': '599 zł', 'Bateria': '229 zł' }
+      },
+      '3 gen': {
+        '38mm': { 'Zalanie': '149 zł', 'Ekran': '799 zł', 'Bateria': '249 zł' },
+        '42mm': { 'Zalanie': '149 zł', 'Ekran': '799 zł', 'Bateria': '249 zł' }
+      },
+      '4 gen': {
+        '40mm': { 'Zalanie': '149 zł', 'Ekran': '999 zł', 'Bateria': '289 zł' },
+        '44mm': { 'Zalanie': '149 zł', 'Ekran': '999 zł', 'Bateria': '289 zł' }
+      },
+      '5 gen': {
+        '40mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': '349 zł' },
+        '44mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': '349 zł' }
+      },
+      '6 gen': {
+        '40mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' },
+        '44mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' }
+      },
+      '7 gen': {
+        '41mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' },
+        '45mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' }
+      },
+      'SE': {
+        '40mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' },
+        '44mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' }
+      }
+    };
+
+    function showWatchModel(gen, btn) {
+      document.querySelectorAll('#watch .model-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = watchData[gen];
+      const container = document.getElementById('modelContent-watch');
+      container.innerHTML = '';
+
+      Object.entries(data).forEach(([size, services]) => {
+        Object.entries(services).forEach(([name, price]) => {
+          container.innerHTML += `
+        
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-circle-info text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">${name} (${size})</h3>
+      <p class="text-gray-500 text-sm mb-4">Usługa Apple Watch ${gen}</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${price}</a>
+    </div>
+    
+      `;
+        });
+      });
+    }
+
+    // Podobne funkcje dla Mac Mini, Mac Pro i Apple TV
+
+    const macMiniData = {
+      '2012': { 'Głośna praca': '99 zł', 'Brak reakcji': '299 zł', 'Nie uruchamia się': '149 zł', 'Brak obrazu': '249 zł' },
+      '2014': { 'Głośna praca': '99 zł', 'Brak reakcji': '299 zł', 'Nie uruchamia się': '149 zł', 'Brak obrazu': '249 zł' },
+      '2018': { 'Głośna praca': '99 zł', 'Brak reakcji': '299 zł', 'Nie uruchamia się': '149 zł', 'Brak obrazu': '249 zł' },
+      '2020': { 'Głośna praca': '99 zł', 'Brak reakcji': '299 zł', 'Nie uruchamia się': '149 zł', 'Brak obrazu': '249 zł' }
+    };
+    function showMacMiniModel(model, btn) {
+      document.querySelectorAll('#macmini .model-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const container = document.getElementById('modelContent-macmini');
+      container.innerHTML = Object.entries(macMiniData[model]).map(([n, p]) => `
+    
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-circle-info text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">${n}</h3>
+      <p class="text-gray-500 text-sm mb-4">Mac Mini ${model}</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${p}</a>
+    </div>
+    `).join('');
+    }
+
+    const macProData = {
+      '2009–2013': { 'Głośna praca': '149 zł', 'Brak reakcji': '249 zł', 'Nie uruchamia się': '149 zł', 'Brak obrazu': '249 zł' },
+      '2019': { 'Głośna praca': '249 zł', 'Brak reakcji': '349 zł', 'Nie uruchamia się': '149 zł', 'Brak obrazu': '249 zł' }
+    };
+    function showMacProModel(model, btn) {
+      document.querySelectorAll('#macpro .model-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const container = document.getElementById('modelContent-macpro');
+      container.innerHTML = Object.entries(macProData[model]).map(([n, p]) => `
+    
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-circle-info text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">${n}</h3>
+      <p class="text-gray-500 text-sm mb-4">Mac Pro ${model}</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${p}</a>
+    </div>
+    `).join('');
+    }
+
+    const tvData = {
+      'gen1': { 'Zalanie': '79 zł', 'Uruchamianie': '99 zł', 'Oprogramowanie': '79 zł' },
+      'gen2': { 'Zalanie': '99 zł', 'Uruchamianie': '99 zł', 'Oprogramowanie': '89 zł' },
+      'gen3': { 'Zalanie': '129 zł', 'Uruchamianie': '99 zł', 'Oprogramowanie': '99 zł' },
+      'hd': { 'Zalanie': '149 zł', 'Uruchamianie': '149 zł', 'Oprogramowanie': '99 zł' },
+      '4k': { 'Zalanie': '149 zł', 'Uruchamianie': '199 zł', 'Oprogramowanie': '149 zł' }
+    };
+    function showAppleTVModel(model, btn) {
+      document.querySelectorAll('#appletv .model-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const container = document.getElementById('modelContent-appletv');
+      container.innerHTML = Object.entries(tvData[model]).map(([n, p]) => `
+    
+    <div class="bg-white p-6 rounded-xl shadow text-center">
+      <i class="fas fa-circle-info text-3xl text-primary mb-3"></i>
+<h3 class="font-semibold text-lg mb-1">${n}</h3>
+      <p class="text-gray-500 text-sm mb-4">Apple TV ${model.toUpperCase()}</p>
+      <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">${p}</a>
+    </div>
+    `).join('');
+    }
+
+    // Init on load
+
+
+    window.onload = () => {
+      const iph = document.querySelector('[onclick^="showModel"]');
+      if (iph) iph.click();
+      const ipd = document.querySelector('[onclick^="showIpadModel"]');
+      if (ipd) ipd.click();
+      const imc = document.querySelector('[onclick^="showImacModel"]');
+      if (imc) imc.click();
+      const mbk = document.querySelector('[onclick^="showMacbookModel"]');
+      if (mbk) mbk.click();
+      const wtc = document.querySelector('[onclick^="showWatchModel"]');
+      if (wtc) wtc.click();
+      const mmi = document.querySelector('[onclick^="showMacMiniModel"]');
+      if (mmi) mmi.click();
+      const mpr = document.querySelector('[onclick^="showMacProModel"]');
+      if (mpr) mpr.click();
+      const atv = document.querySelector('[onclick^="showAppleTVModel"]');
+      if (atv) atv.click();
+    };
+
+    function modelKeyFromLabel(label) {
+      const map = { '1 gen': 'gen1', '2 gen': 'gen2', '3 gen': 'gen3', 'HD': 'hd', '4K': '4k' };
+      return map[label] || 'gen1';
+    }
+  </script>
+<script>
+  function scrollToSection(sectionId) {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  }
+
+  document.getElementById('mobile-menu-button')?.addEventListener('click', toggleMobileMenu);
+</script>
+</body>
+</html>

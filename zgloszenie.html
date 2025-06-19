@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zgłoś naprawę – Oh my Mac!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="bg-gray-50 font-sans antialiased text-gray-900">
+    <div class="max-w-4xl mx-auto py-16 px-4">
+        <h1 class="text-3xl font-bold text-center mb-10">Zgłoś naprawę</h1>
+
+        <form class="space-y-10">
+
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Informacje o urządzeniu</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Numer seryjny" class="input">
+                    <input type="text" placeholder="Numer IMEI" class="input">
+                    <input type="text" placeholder="Nazwa urządzenia" class="input">
+                    <select class="input">
+                        <option>W jakim przypadku wysyłasz?</option>
+                        <option>Wysyłka door-to-door</option>
+                        <option>Dostawa osobista</option>
+                    </select>
+                    <textarea placeholder="Opisz problem z urządzeniem" class="input col-span-2"></textarea>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Twoje dane</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Imię" class="input">
+                    <input type="text" placeholder="Nazwisko" class="input">
+                    <input type="text" placeholder="Nazwa firmy (opcjonalnie)" class="input">
+                    <input type="text" placeholder="NIP (opcjonalnie)" class="input">
+                    <input type="text" placeholder="Ulica, nr domu" class="input">
+                    <input type="text" placeholder="Miasto" class="input">
+                    <input type="text" placeholder="Kod pocztowy" class="input">
+                    <input type="tel" placeholder="Telefon" class="input">
+                    <input type="email" placeholder="Email" class="input col-span-2">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Dodatkowe informacje</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Wewnętrzny numer zlecenia (opcjonalnie)" class="input">
+                    <input type="text" placeholder="Hasło/kod blokady (opcjonalnie)" class="input">
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Wysyłka i priorytet</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <select class="input">
+                        <option>Wybierz oddział</option>
+                        <option>Warszawa</option>
+                        <option>Kraków</option>
+                        <option>Wrocław</option>
+                    </select>
+                    <select class="input">
+                        <option>Wybierz sposób wysyłki</option>
+                        <option>Kurier</option>
+                        <option>List przewozowy</option>
+                    </select>
+                    <input type="text" placeholder="Firma kurierska (opcjonalnie)" class="input">
+                    <select class="input">
+                        <option>Priorytet zgłoszenia</option>
+                        <option>Standard</option>
+                        <option>Ekspres</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <label class="inline-flex items-center space-x-2">
+                    <input type="checkbox" class="form-checkbox">
+                    <span>Akceptuję regulamin serwisu</span>
+                </label>
+            </div>
+
+            <div class="text-center">
+                <button type="submit"
+                    class="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition">Wyślij
+                    zgłoszenie</button>
+            </div>
+        </form>
+    </div>
+
+    <style>
+        .input {
+            @apply w-full p-3 border border-gray-300 rounded-lg text-sm;
+        }
+    </style>
+</body>
+
+</html>
