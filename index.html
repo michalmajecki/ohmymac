@@ -25,7 +25,31 @@
             }
         }
     </script>
-
+    <style>
+        .flip-card {
+            perspective: 1200px;
+        }
+        .flip-card-inner {
+            transition: transform 0.9s cubic-bezier(.4,2,.6,1);
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+        .flip-card-front {
+            z-index: 2;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+            z-index: 3;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased text-gray-900">
@@ -356,29 +380,73 @@
             }
         ];
 
-        // Generowanie sekcji usług
-        const servicesContainer = document.querySelector('#services .grid');
+        // Opisy na odwrocie kafelków
+        const serviceBackDescriptions = {
+            "Naprawa iPhone": "Szybka wymiana szybki, baterii, diagnostyka i naprawa wszystkich modeli iPhone. Skorzystaj z bezpłatnej wyceny!",
+            "Naprawa MacBook": "Kompleksowa naprawa MacBooków: matryce, klawiatury, płyty główne. Oryginalne części i gwarancja.",
+            "Naprawa iPad": "Wymiana wyświetlaczy, baterii i naprawa złączy ładowania w iPadach. Szybko i profesjonalnie.",
+            "Naprawa Apple Watch": "Naprawa ekranów, baterii i zalanych zegarków Apple Watch. Skontaktuj się po indywidualną wycenę.",
+            "Naprawa iMac": "Serwis iMac: wymiana dysków, naprawa zasilaczy, modernizacje. Darmowa diagnostyka!",
+            "Naprawa Apple TV": "Naprawa Apple TV wszystkich generacji. Problemy z zasilaniem, oprogramowaniem i łącznością.",
+            "Sprzedaż/Wymiana": "Odkupujemy i wymieniamy używane urządzenia Apple. Szybka wycena i bezpieczna transakcja.",
+            "Przywracanie funkcji": "Przywracamy pełną funkcjonalność po zalaniu, upadku lub innych uszkodzeniach.",
+            "Naprawa Mac Mini": "Naprawa i modernizacja Mac Mini. Wymiana dysków, naprawa zasilania, rozbudowa RAM.",
+            "Naprawa Mac Pro": "Serwis i modernizacja Mac Pro. Wymiana komponentów, naprawa płyt głównych.",
+            "Odzyskiwanie danych": "Profesjonalne odzyskiwanie danych z dysków, SSD i innych nośników. Bezpiecznie i skutecznie.",
+            "Naprawa płyty głównej": "Zaawansowana naprawa płyt głównych w urządzeniach Apple. Diagnoza i szybka realizacja."
+        };
 
+        // Generowanie sekcji usług z flip card
+        const servicesContainer = document.querySelector('#services .grid');
+        servicesContainer.innerHTML = '';
         services.forEach(service => {
             const serviceElement = document.createElement('div');
-            serviceElement.className = 'bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1';
+            serviceElement.className = 'flip-card bg-transparent rounded-xl shadow-lg overflow-visible transition-all hover:shadow-xl hover:-translate-y-1 cursor-pointer';
             serviceElement.innerHTML = `
-                <div class="p-6">
-                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
-                        <i class="fas fa-${service.icon} text-2xl"></i>
+                <div class="flip-card-inner bg-white rounded-xl h-full min-h-[340px] relative">
+                    <div class="flip-card-front flex flex-col items-center justify-center p-6 h-full">
+                        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
+                            <i class="fas fa-${service.icon} text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">${service.title}</h3>
+                        <p class="mt-2 text-gray-600 text-center">${service.description}</p>
+                        <ul class="mt-4 space-y-2 text-gray-600">
+                            ${service.features.map(feature => `
+                                <li class="flex items-center justify-center">
+                                    <i class="fas fa-check text-primary mr-2"></i> ${feature}
+                                </li>
+                            `).join('')}
+                        </ul>
                     </div>
-                    <h3 class="text-xl font-bold">${service.title}</h3>
-                    <p class="mt-2 text-gray-600">${service.description}</p>
-                    <ul class="mt-4 space-y-2 text-gray-600">
-                        ${service.features.map(feature => `
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-primary mr-2"></i> ${feature}
-                            </li>
-                        `).join('')}
-                    </ul>
+                    <div class="flip-card-back flex flex-col items-center justify-center p-6 h-full bg-white rounded-xl">
+                        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
+                            <i class="fas fa-${service.icon} text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">${service.title}</h3>
+                        <p class="text-gray-600 text-center mb-6">${serviceBackDescriptions[service.title] || ''}</p>
+                        <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-full font-medium transition hover:bg-primary/90">Skontaktuj się</a>
+                    </div>
                 </div>
             `;
             servicesContainer.appendChild(serviceElement);
+        });
+
+        // Flip card JS
+        servicesContainer.addEventListener('click', function(e) {
+            const card = e.target.closest('.flip-card');
+            if (card) {
+                // Zamknij inne otwarte
+                document.querySelectorAll('.flip-card.flipped').forEach(c => {
+                    if (c !== card) c.classList.remove('flipped');
+                });
+                card.classList.toggle('flipped');
+            }
+        });
+        // Zamknięcie po kliknięciu poza kafelkiem
+        window.addEventListener('click', function(e) {
+            if (!e.target.closest('.flip-card')) {
+                document.querySelectorAll('.flip-card.flipped').forEach(c => c.classList.remove('flipped'));
+            }
         });
 
         // Funkcje pomocnicze - zdefiniowane w load-components.js
