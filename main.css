@@ -1,0 +1,48 @@
+/* Ogólne rozszerzenia */
+.logo-text {
+	font-family: 'Kaushan Script', cursive;
+	color: #2d73a5;
+}
+
+.hero-gradient {
+	background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+}
+
+/* Styl dla rozwijanego cennika */
+details[open] summary .rotate-icon {
+	transform: rotate(90deg);
+}
+
+/* Animacje i interakcje przycisków */
+.model-button {
+	padding: 0.5rem 1rem;
+	border-radius: 9999px;
+	font-weight: 500;
+	transition: all 0.2s;
+}
+
+.model-button:hover {
+	box-shadow: 0 0 0 2px #2d73a5, 0 0 0 4px white;
+}
+.model-tab {
+	padding: 0.5rem 1.25rem;
+	border-radius: 9999px;
+	font-weight: 500;
+	border: 1px solid #d1d5db;
+	background-color: white;
+	color: #111827;
+	transition: all 0.2s;
+}
+
+.model-tab:hover {
+	border-color: #2d73a5;
+	color: #2d73a5;
+	box-shadow: 0 0 0 2px rgba(45, 115, 165, 0.15);
+}
+
+.model-tab.active {
+	background-color: #2d73a5;
+	color: white;
+	border-color: #2d73a5;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

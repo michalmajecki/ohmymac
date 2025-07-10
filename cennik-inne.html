@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inne usługi – Oh my Mac!</title>
+    
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .logo-text {
+            font-family: 'Kaushan Script', cursive;
+            color: #2d73a5;
+        }
+        
+        .tab-btn {
+            @apply px-4 py-2 rounded-full text-sm font-medium transition border border-transparent bg-white text-gray-900 hover:border-primary hover:shadow hover:bg-primary/10;
+        }
+        
+        .tab-btn.active {
+            @apply bg-primary text-white border-primary shadow-md;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Page Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-6">Inne usługi</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Specjalistyczne usługi serwisowe i dodatkowe opcje naprawy.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-microchip text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Uszkodzona płyta główna?</h3>
+                <p class="text-gray-500 text-sm mb-4">Urządzenie nie reaguje?</p>
+                <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">
+                    Zgłoś naprawę płyty głównej
+                </a>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-database text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Odzysk danych i wycena</h3>
+                <p class="text-gray-500 text-sm mb-4">Masz uszkodzony dysk lub nośnik?</p>
+                <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">
+                    Zgłoś odzysk danych
+                </a>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-arrows-rotate text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Wymiana starego sprzętu</h3>
+                <p class="text-gray-500 text-sm mb-4">Odbierz zniżkę przy zakupie nowego</p>
+                <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">
+                    Zapytaj o wymianę Apple
+                </a>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-lock-open text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Problemy z odblokowaniem</h3>
+                <p class="text-gray-500 text-sm mb-4">FaceID, TouchID, TrueTone?</p>
+                <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">
+                    Zgłoś naprawę funkcji
+                </a>
+            </div>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-center mb-8">Dodatkowe usługi</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Diagnostyka</h3>
+                    <p class="text-gray-500 text-sm mb-4">Bezpłatna diagnoza problemu</p>
+                    <span class="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
+                        Darmowa
+                    </span>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-shield-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Gwarancja</h3>
+                    <p class="text-gray-500 text-sm mb-4">12 miesięcy gwarancji na naprawy</p>
+                    <span class="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                        Standardowo
+                    </span>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-clock text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Ekspresowa naprawa</h3>
+                    <p class="text-gray-500 text-sm mb-4">Naprawa w ciągu 24h</p>
+                    <span class="inline-block bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">
+                        +50 zł
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="text-center mt-16">
+            <p class="text-gray-600 mb-4">Nie widzisz swojej usługi lub masz pytanie?</p>
+            <a href="index.html#contact" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition">
+                Skontaktuj się z nami
+            </a>
+        </div>
+
+        <!-- Navigation to other cenniks -->
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-bold mb-6">Cenniki urządzeń</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="cennik-iphone.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPhone</a>
+                <a href="cennik-macbook.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">MacBook</a>
+                <a href="cennik-ipad.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPad</a>
+                <a href="cennik-imac.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iMac</a>
+                <a href="cennik-watch.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">Apple Watch</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
+    <script src="load-components.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        /**
+         * Toggles mobile menu visibility
+         */
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        /**
+         * Scrolls to section smoothly
+         * @param {string} sectionId - Target section ID
+         */
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up mobile menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', toggleMobileMenu);
+            }
+        });
+    </script>
+</body>
+</html> 

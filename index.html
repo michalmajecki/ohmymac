@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oh my Mac! - Serwis Apple w Warszawie</title>
+    <base target="_self">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                              colors: {
+            primary: '#2d73a5',
+          },
+                    fontFamily: {
+                        'sans': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="font-sans antialiased text-gray-900">
+
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Sekcja Hero -->
+    <section id="hero" class="hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Profesjonalny <span class="text-primary">serwis</span> urządzeń Apple
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-600 max-w-lg">
+                        Naprawiamy wszystkie urządzenia marki Apple z zachowaniem najwyższych standardów jakości.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="#"
+                            class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-colors"
+                            onclick="event.preventDefault(); scrollToSection('contact')">
+                            Napisz do nas
+                        </a>
+                        <a href="#"
+                            class="border border-gray-300 hover:border-primary text-gray-900 px-6 py-3 rounded-full font-medium transition-colors"
+                            onclick="event.preventDefault(); scrollToSection('services')">
+                            Nasze usługi
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80"
+                        alt="MacBook Pro na stole" class="rounded-xl shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja Kim jesteśmy -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold">Kim <span class="text-primary">jesteśmy?</span></h2>
+                    <p class="mt-6 text-gray-600">
+                        Jesteśmy zespołem certyfikowanych techników z wieloletnim doświadczeniem w naprawie urządzeń
+                        Apple.
+                        W naszym serwisie korzystamy wyłącznie z oryginalnych części i najnowocześniejszych narzędzi.
+                    </p>
+                    <div class="mt-8 grid grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-bold">10+ lat</h3>
+                            <p class="text-gray-600">Doświadczenia</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">5000+</h3>
+                            <p class="text-gray-600">Naprawionych urządzeń</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">12 miesięcy</h3>
+                            <p class="text-gray-600">Gwarancji na naprawy</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Oryginalne</h3>
+                            <p class="text-gray-600">Części zamienne</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80"
+                        alt="Zespół serwisowy" class="rounded-xl shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja Usługi -->
+    <section id="services" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Oferowane <span class="text-primary">usługi</span></h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Kompleksowa naprawa i serwis wszystkich urządzeń Apple
+                </p>
+            </div>
+
+            <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Generowane przez JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja Wsparcie -->
+    <section id="support" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Wsparcie <span class="text-primary">techniczne</span></h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Pomagamy rozwiązać problemy z Twoimi urządzeniami Apple
+                </p>
+            </div>
+
+            <div class="mt-12 grid md:grid-cols-3 gap-8">
+                <a href="zgloszenie.html" class="block bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
+                    <div
+                        class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6 mx-auto">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center">Zgłoś naprawę</h3>
+                    <p class="mt-4 text-gray-600 text-center">
+                        W zależności od problemu z którym do nas przybywasz chcemy możliwie mocno ułatwić Ci proces
+                        przygotowania zgłoszenia
+                    </p>
+                </a>
+
+                <a href="naprawy.html" class="block bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
+                    <div
+                        class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6 mx-auto">
+                        <i class="fas fa-question-circle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center">Moje naprawy</h3>
+                    <p class="mt-4 text-gray-600 text-center">
+                        Wypełnij formularz i sprawdź swoją naprawę
+                    </p>
+                </a>
+
+                <a href="wspolpraca.html" class="block bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
+                    <div
+                        class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6 mx-auto">
+                        <i class="fas fa-book text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center">Oferta dla firm</h3>
+                    <p class="mt-4 text-gray-600 text-center">
+                        Doceniamy naszych stałych klientów
+                    </p>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sekcja Kontakt -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Kontakt</h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Skontaktuj się z nami, aby uzyskać pomoc lub wycenę naprawy
+                </p>
+            </div>
+
+            <div class="mt-12 grid md:grid-cols-2 gap-12">
+                <div>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Imię i nazwisko</label>
+                            <input type="text" id="name"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Telefon</label>
+                            <input type="tel" id="phone"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Wiadomość</label>
+                            <textarea id="message" rows="4"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                                Wyślij wiadomość
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <div class="bg-white p-8 rounded-xl h-full shadow-sm">
+                        <h3 class="text-xl font-bold">Dane kontaktowe</h3>
+                        <div class="mt-6 space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="font-medium">Adres</p>
+                                    <p class="text-gray-600">ul. Przykładowa 123<br>00-001 Warszawa</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-primary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="font-medium">Telefon</p>
+                                    <p class="text-gray-600">+48 123 456 789</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-envelope text-primary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="font-medium">Email</p>
+                                    <p class="text-gray-600">kontakt@oh-my-mac.pl</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-clock text-primary text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="font-medium">Godziny otwarcia</p>
+                                    <p class="text-gray-600">Pon-Pt: 9:00 - 18:00<br>Sb: 10:00 - 14:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-medium">Śledź nas</h4>
+                            <div class="flex space-x-4 mt-4">
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition-colors">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
+    <script src="load-components.js"></script>
+    
+    <script>
+        // Dane usług
+        const services = [
+            {
+                title: "Naprawa iPhone",
+                icon: "mobile-alt",
+                description: "Wymiana szyb, baterii, gniazd ładowania i innych podzespołów wszystkich modeli iPhone.",
+                features: ["Zachowanie wodoodporności", "Oryginalne części"]
+            },
+            {
+                title: "Naprawa MacBook",
+                icon: "laptop",
+                description: "Kompleksowa naprawa wszystkich modeli MacBook Air и MacBook Pro.",
+                features: ["Wymiana klawiatur", "Naprawa matryc"]
+            },
+            {
+                title: "Naprawa iPad",
+                icon: "tablet-alt",
+                description: "Naprawa wszystkich modeli iPad, iPad Air, iPad Pro и iPad Mini.",
+                features: ["Wymiana wyświetlaczy", "Naprawa gniazd ładowania"]
+            },
+            {
+                title: "Naprawa Apple Watch",
+                icon: "clock",
+                description: "Naprawa zegarków Apple Watch wszystkich generacji i modeli.",
+                features: ["Wymiana szyb", "Naprawa baterii"]
+            },
+            {
+                title: "Naprawa iMac",
+                icon: "desktop",
+                description: "Naprawa komputerów iMac wszystkich rozmiarów i generacji.",
+                features: ["Wymiana dysków", "Naprawa zasilaczy"]
+            },
+            {
+                title: "Naprawa Apple TV",
+                icon: "tv",
+                description: "Naprawa odtwarzaczy Apple TV wszystkich generacji.",
+                features: ["Naprawa zasilania", "Problemy z łącznością"]
+            },
+            {
+                title: "Sprzedaż/Wymiana",
+                icon: "exchange-alt",
+                description: "Kupno i wymiana używanych urządzeń Apple w dobrym stanie.",
+                features: ["Profesjonalna wycena", "Gwarancja na sprzedane urządzenia"]
+            },
+            {
+                title: "Przywracanie funkcji",
+                icon: "redo",
+                description: "Przywracanie pełnej funkcjonalności uszkodzonym urządzeniom Apple.",
+                features: ["Po zalaniu", "Po upadku"]
+            },
+            {
+                title: "Naprawa Mac Mini",
+                icon: "compact-disc",
+                description: "Naprawa komputerów Mac Mini wszystkich generacji.",
+                features: ["Wymiana dysków", "Naprawa zasilania"]
+            },
+            {
+                title: "Naprawa Mac Pro",
+                icon: "tower-broadcast",
+                description: "Naprawa stacji roboczych Mac Pro.",
+                features: ["Wymiana komponentów", "Modernizacja"]
+            },
+            {
+                title: "Odzyskiwanie danych",
+                icon: "database",
+                description: "Profesjonalne odzyskiwanie danych z uszkodzonych urządzeń.",
+                features: ["Z uszkodzonych dysków", "Po formatowaniu"]
+            },
+            {
+                title: "Naprawa płyty głównej",
+                icon: "microchip",
+                description: "Kompleksowa naprawa płyt głównych w urządzeniach Apple.",
+                features: ["Wymiana komponentów", "Naprawa układów zasilania"]
+            }
+        ];
+
+        // Generowanie sekcji usług
+        const servicesContainer = document.querySelector('#services .grid');
+
+        services.forEach(service => {
+            const serviceElement = document.createElement('div');
+            serviceElement.className = 'bg-white rounded-xl shadow-lg overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1';
+            serviceElement.innerHTML = `
+                <div class="p-6">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
+                        <i class="fas fa-${service.icon} text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">${service.title}</h3>
+                    <p class="mt-2 text-gray-600">${service.description}</p>
+                    <ul class="mt-4 space-y-2 text-gray-600">
+                        ${service.features.map(feature => `
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-2"></i> ${feature}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+            servicesContainer.appendChild(serviceElement);
+        });
+
+        // Funkcje pomocnicze - zdefiniowane w load-components.js
+
+        // Obsługa formularza
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
