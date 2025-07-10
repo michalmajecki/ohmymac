@@ -64,36 +64,28 @@
                 <i class="fas fa-microchip text-3xl text-primary mb-3"></i>
                 <h3 class="font-semibold text-lg mb-1">Uszkodzona płyta główna?</h3>
                 <p class="text-gray-500 text-sm mb-4">Urządzenie nie reaguje?</p>
-                <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">
-                    Zgłoś naprawę płyty głównej
-                </a>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
             </div>
             
             <div class="bg-white p-6 rounded-xl shadow text-center">
                 <i class="fas fa-database text-3xl text-primary mb-3"></i>
                 <h3 class="font-semibold text-lg mb-1">Odzysk danych i wycena</h3>
                 <p class="text-gray-500 text-sm mb-4">Masz uszkodzony dysk lub nośnik?</p>
-                <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">
-                    Zgłoś odzysk danych
-                </a>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
             </div>
             
             <div class="bg-white p-6 rounded-xl shadow text-center">
                 <i class="fas fa-arrows-rotate text-3xl text-primary mb-3"></i>
                 <h3 class="font-semibold text-lg mb-1">Wymiana starego sprzętu</h3>
                 <p class="text-gray-500 text-sm mb-4">Odbierz zniżkę przy zakupie nowego</p>
-                <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">
-                    Zapytaj o wymianę Apple
-                </a>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
             </div>
             
             <div class="bg-white p-6 rounded-xl shadow text-center">
                 <i class="fas fa-lock-open text-3xl text-primary mb-3"></i>
                 <h3 class="font-semibold text-lg mb-1">Problemy z odblokowaniem</h3>
                 <p class="text-gray-500 text-sm mb-4">FaceID, TouchID, TrueTone?</p>
-                <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">
-                    Zgłoś naprawę funkcji
-                </a>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
             </div>
         </div>
 
@@ -154,44 +146,35 @@
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Modal kontaktowy (ukryty domyślnie) -->
-    <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm hidden">
-      <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-lg mx-auto p-8 animate-fade-in">
-        <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-400 hover:text-primary text-2xl" aria-label="Zamknij">
-          <i class="fas fa-times"></i>
-        </button>
-        <h2 class="text-2xl font-bold text-center mb-4">Skontaktuj się z nami</h2>
-        <form class="space-y-6" id="modal-contact-form">
-          <div>
-            <label for="modal-name" class="block text-sm font-medium text-gray-700">Imię i nazwisko</label>
-            <input type="text" id="modal-name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input type="email" id="modal-email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-phone" class="block text-sm font-medium text-gray-700">Telefon</label>
-            <input type="tel" id="modal-phone" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-message" class="block text-sm font-medium text-gray-700">Wiadomość</label>
-            <textarea id="modal-message" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"></textarea>
-          </div>
-          <div>
-            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-              Wyślij wiadomość
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
     <!-- Load components script -->
     <script src="load-components.js"></script>
     
     <!-- JavaScript -->
     <script>
+        // Services configuration
+        const services = [
+            {
+                icon: 'fas fa-microchip',
+                title: 'Naprawa płyty głównej',
+                description: 'Usługa serwisowa'
+            },
+            {
+                icon: 'fas fa-hdd',
+                title: 'Odzysk danych',
+                description: 'Usługa serwisowa'
+            },
+            {
+                icon: 'fas fa-exchange-alt',
+                title: 'Wymiana sprzętu',
+                description: 'Usługa serwisowa'
+            },
+            {
+                icon: 'fas fa-fingerprint',
+                title: 'Naprawa funkcji',
+                description: 'Usługa serwisowa'
+            }
+        ];
+
         /**
          * Toggles mobile menu visibility
          */
@@ -216,47 +199,6 @@
                 mobileMenuButton.addEventListener('click', toggleMobileMenu);
             }
         });
-
-        // MODAL KONTAKTOWY
-        function openContactModal() {
-          document.getElementById('contact-modal').classList.remove('hidden');
-          document.body.classList.add('overflow-hidden');
-        }
-        function closeContactModal() {
-          document.getElementById('contact-modal').classList.add('hidden');
-          document.body.classList.remove('overflow-hidden');
-        }
-        // Otwieranie modala po kliknięciu w .open-contact-modal
-        window.addEventListener('click', function(e) {
-          const btn = e.target.closest('.open-contact-modal');
-          if (btn) {
-            e.preventDefault();
-            openContactModal();
-          }
-        });
-        // Zamknięcie modala po kliknięciu w X lub poza modalem
-        document.addEventListener('click', function(e) {
-          const modal = document.getElementById('contact-modal');
-          if (!modal.classList.contains('hidden')) {
-            if (e.target.id === 'close-contact-modal' || (e.target === modal)) {
-              closeContactModal();
-            }
-          }
-        });
-        // Zamknięcie ESC
-        window.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') closeContactModal();
-        });
-        // Obsługa formularza w popupie
-        const modalForm = document.getElementById('modal-contact-form');
-        if (modalForm) {
-          modalForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
-            modalForm.reset();
-            closeContactModal();
-          });
-        }
     </script>
 </body>
 </html> 

@@ -67,7 +67,8 @@
             <button class="model-tab" data-model="5" onclick="showModel('5', this)">5 gen</button>
             <button class="model-tab" data-model="6" onclick="showModel('6', this)">6 gen</button>
             <button class="model-tab" data-model="7" onclick="showModel('7', this)">7 gen</button>
-            <button class="model-tab" data-model="SE" onclick="showModel('SE', this)">SE</button>
+            <button class="model-tab" data-model="8" onclick="showModel('8', this)">8 gen</button>
+            <button class="model-tab" data-model="9" onclick="showModel('9', this)">9 gen</button>
         </div>
 
         <!-- Services Grid -->
@@ -91,39 +92,6 @@
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Modal kontaktowy (ukryty domyślnie) -->
-    <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm hidden">
-      <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-lg mx-auto p-8 animate-fade-in">
-        <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-400 hover:text-primary text-2xl" aria-label="Zamknij">
-          <i class="fas fa-times"></i>
-        </button>
-        <h2 class="text-2xl font-bold text-center mb-4">Skontaktuj się z nami</h2>
-        <form class="space-y-6" id="modal-contact-form">
-          <div>
-            <label for="modal-name" class="block text-sm font-medium text-gray-700">Imię i nazwisko</label>
-            <input type="text" id="modal-name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input type="email" id="modal-email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-phone" class="block text-sm font-medium text-gray-700">Telefon</label>
-            <input type="tel" id="modal-phone" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-message" class="block text-sm font-medium text-gray-700">Wiadomość</label>
-            <textarea id="modal-message" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"></textarea>
-          </div>
-          <div>
-            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-              Wyślij wiadomość
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
     <!-- Load components script -->
     <script src="load-components.js"></script>
     
@@ -132,38 +100,88 @@
         // Pricing data for Apple Watch models
         const watchPricing = {
             '1': {
-                '38mm': { 'Zalanie': '149 zł', 'Ekran': '499 zł', 'Bateria': '199 zł' },
-                '42mm': { 'Zalanie': '149 zł', 'Ekran': '499 zł', 'Bateria': '199 zł' }
+                screen: '499 zł',
+                battery: '199 zł',
+                water: '149 zł',
+                charging: '99 zł'
             },
             '2': {
-                '38mm': { 'Zalanie': '149 zł', 'Ekran': '599 zł', 'Bateria': '229 zł' },
-                '42mm': { 'Zalanie': '149 zł', 'Ekran': '599 zł', 'Bateria': '229 zł' }
+                screen: '449 zł',
+                battery: '179 zł',
+                water: '149 zł',
+                charging: '99 zł'
             },
             '3': {
-                '38mm': { 'Zalanie': '149 zł', 'Ekran': '799 zł', 'Bateria': '249 zł' },
-                '42mm': { 'Zalanie': '149 zł', 'Ekran': '799 zł', 'Bateria': '249 zł' }
+                screen: '399 zł',
+                battery: '159 zł',
+                water: '149 zł',
+                charging: '99 zł'
             },
             '4': {
-                '40mm': { 'Zalanie': '149 zł', 'Ekran': '999 zł', 'Bateria': '289 zł' },
-                '44mm': { 'Zalanie': '149 zł', 'Ekran': '999 zł', 'Bateria': '289 zł' }
+                screen: '349 zł',
+                battery: '139 zł',
+                water: '149 zł',
+                charging: '99 zł'
             },
             '5': {
-                '40mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': '349 zł' },
-                '44mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': '349 zł' }
+                screen: '299 zł',
+                battery: '119 zł',
+                water: '149 zł',
+                charging: '99 zł'
             },
             '6': {
-                '40mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' },
-                '44mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' }
+                screen: '249 zł',
+                battery: '99 zł',
+                water: '149 zł',
+                charging: '99 zł'
             },
             '7': {
-                '41mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' },
-                '45mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' }
+                screen: '199 zł',
+                battery: '79 zł',
+                water: '149 zł',
+                charging: '99 zł'
             },
-            'SE': {
-                '40mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' },
-                '44mm': { 'Zalanie': '149 zł', 'Ekran': 'Zapytaj mailowo', 'Bateria': 'Zapytaj mailowo' }
+            '8': {
+                screen: '149 zł',
+                battery: '59 zł',
+                water: '149 zł',
+                charging: '99 zł'
+            },
+            '9': {
+                screen: '99 zł',
+                battery: '39 zł',
+                water: '149 zł',
+                charging: '99 zł'
             }
         };
+
+        // Services configuration
+        const services = [
+            {
+                icon: 'fas fa-mobile-alt',
+                title: 'Wymiana ekranu',
+                description: 'Usługa serwisowa',
+                key: 'screen'
+            },
+            {
+                icon: 'fas fa-battery-half',
+                title: 'Wymiana baterii',
+                description: 'Usługa serwisowa',
+                key: 'battery'
+            },
+            {
+                icon: 'fas fa-water',
+                title: 'Naprawa po zalaniu',
+                description: 'Usługa serwisowa',
+                key: 'water'
+            },
+            {
+                icon: 'fas fa-bolt',
+                title: 'Problemy z ładowaniem',
+                description: 'Usługa serwisowa',
+                key: 'charging'
+            }
+        ];
 
         /**
          * Shows services for selected Apple Watch model
@@ -176,23 +194,19 @@
             button.classList.add('active');
 
             // Get pricing data for selected model
-            const data = watchPricing[modelKey];
-            if (!data) return;
+            const pricing = watchPricing[modelKey];
+            if (!pricing) return;
 
             // Generate services HTML
-            let servicesHTML = '';
-            Object.entries(data).forEach(([size, services]) => {
-                Object.entries(services).forEach(([name, price]) => {
-                    servicesHTML += `
-                        <div class="bg-white p-6 rounded-xl shadow text-center">
-                            <i class="fas fa-circle-info text-3xl text-primary mb-3"></i>
-                            <h3 class="font-semibold text-lg mb-1">${name} (${size})</h3>
-                            <p class="text-gray-500 text-sm mb-4">Usługa Apple Watch ${modelKey}</p>
-                            <button class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90 open-contact-modal">Skontaktuj się z nami</button>
-                        </div>
-                    `;
-                });
-            });
+            const servicesHTML = services.map(service => `
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <i class="${service.icon} text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">${service.title}</h3>
+                    <p class="text-gray-500 text-sm mb-2">${service.description} ${modelKey}</p>
+                    <p class="text-primary font-bold text-lg mb-4">${pricing[service.key]}</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            `).join('');
 
             // Update services grid
             document.getElementById('servicesGrid').innerHTML = servicesHTML;
@@ -228,47 +242,6 @@
                 showModel('1', defaultButton);
             }
         });
-
-        // MODAL KONTAKTOWY
-        function openContactModal() {
-          document.getElementById('contact-modal').classList.remove('hidden');
-          document.body.classList.add('overflow-hidden');
-        }
-        function closeContactModal() {
-          document.getElementById('contact-modal').classList.add('hidden');
-          document.body.classList.remove('overflow-hidden');
-        }
-        // Otwieranie modala po kliknięciu w .open-contact-modal
-        window.addEventListener('click', function(e) {
-          const btn = e.target.closest('.open-contact-modal');
-          if (btn) {
-            e.preventDefault();
-            openContactModal();
-          }
-        });
-        // Zamknięcie modala po kliknięciu w X lub poza modalem
-        document.addEventListener('click', function(e) {
-          const modal = document.getElementById('contact-modal');
-          if (!modal.classList.contains('hidden')) {
-            if (e.target.id === 'close-contact-modal' || (e.target === modal)) {
-              closeContactModal();
-            }
-          }
-        });
-        // Zamknięcie ESC
-        window.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') closeContactModal();
-        });
-        // Obsługa formularza w popupie
-        const modalForm = document.getElementById('modal-contact-form');
-        if (modalForm) {
-          modalForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
-            modalForm.reset();
-            closeContactModal();
-          });
-        }
     </script>
 </body>
 </html> 

@@ -69,10 +69,10 @@
                         Naprawiamy wszystkie urządzenia marki Apple z zachowaniem najwyższych standardów jakości.
                     </p>
                     <div class="mt-8 flex flex-wrap gap-4">
-                        <button
-                            class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-colors open-contact-modal">
+                        <a href="kontakt.html"
+                            class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-colors">
                             Napisz do nas
-                        </button>
+                        </a>
                         <a href="#"
                             class="border border-gray-300 hover:border-primary text-gray-900 px-6 py-3 rounded-full font-medium transition-colors"
                             onclick="event.preventDefault(); scrollToSection('services')">
@@ -153,7 +153,7 @@
             </div>
 
             <div class="mt-12 grid md:grid-cols-3 gap-8">
-                <button class="block bg-gray-50 p-8 rounded-xl hover:shadow-lg transition open-contact-modal w-full text-left">
+                <a href="kontakt.html" class="block bg-gray-50 p-8 rounded-xl hover:shadow-lg transition w-full text-left">
                     <div
                         class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6 mx-auto">
                         <i class="fas fa-headset text-2xl"></i>
@@ -163,7 +163,7 @@
                         W zależności od problemu z którym do nas przybywasz chcemy możliwie mocno ułatwić Ci proces
                         przygotowania zgłoszenia
                     </p>
-                </button>
+                </a>
 
                 <a href="naprawy.html" class="block bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
                     <div
@@ -299,39 +299,6 @@
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Modal kontaktowy (ukryty domyślnie) -->
-    <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm hidden">
-      <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-lg mx-auto p-8 animate-fade-in">
-        <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-400 hover:text-primary text-2xl" aria-label="Zamknij">
-          <i class="fas fa-times"></i>
-        </button>
-        <h2 class="text-2xl font-bold text-center mb-4">Skontaktuj się z nami</h2>
-        <form class="space-y-6" id="modal-contact-form">
-          <div>
-            <label for="modal-name" class="block text-sm font-medium text-gray-700">Imię i nazwisko</label>
-            <input type="text" id="modal-name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input type="email" id="modal-email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-phone" class="block text-sm font-medium text-gray-700">Telefon</label>
-            <input type="tel" id="modal-phone" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-message" class="block text-sm font-medium text-gray-700">Wiadomość</label>
-            <textarea id="modal-message" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"></textarea>
-          </div>
-          <div>
-            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-              Wyślij wiadomość
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
     <!-- Load components script -->
     <script src="load-components.js"></script>
     
@@ -456,7 +423,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-center mb-2">${service.title}</h3>
                         <p class="text-gray-600 text-center mb-6">${serviceBackDescriptions[service.title] || ''}</p>
-                        <button class="bg-primary text-white px-6 py-3 rounded-full font-medium transition hover:bg-primary/90 open-contact-modal">Skontaktuj się</button>
+                        <a href="kontakt.html" class="bg-primary text-white px-6 py-3 rounded-full font-medium transition hover:bg-primary/90">Skontaktuj się</a>
                     </div>
                 </div>
             `;
@@ -489,47 +456,6 @@
             alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
             this.reset();
         });
-
-        // MODAL KONTAKTOWY
-        function openContactModal() {
-          document.getElementById('contact-modal').classList.remove('hidden');
-          document.body.classList.add('overflow-hidden');
-        }
-        function closeContactModal() {
-          document.getElementById('contact-modal').classList.add('hidden');
-          document.body.classList.remove('overflow-hidden');
-        }
-        // Otwieranie modala po kliknięciu w .open-contact-modal
-        window.addEventListener('click', function(e) {
-          const btn = e.target.closest('.open-contact-modal');
-          if (btn) {
-            e.preventDefault();
-            openContactModal();
-          }
-        });
-        // Zamknięcie modala po kliknięciu w X lub poza modalem
-        document.addEventListener('click', function(e) {
-          const modal = document.getElementById('contact-modal');
-          if (!modal.classList.contains('hidden')) {
-            if (e.target.id === 'close-contact-modal' || (e.target === modal)) {
-              closeContactModal();
-            }
-          }
-        });
-        // Zamknięcie ESC
-        window.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') closeContactModal();
-        });
-        // Obsługa formularza w popupie
-        const modalForm = document.getElementById('modal-contact-form');
-        if (modalForm) {
-          modalForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
-            modalForm.reset();
-            closeContactModal();
-          });
-        }
     </script>
 </body>
 

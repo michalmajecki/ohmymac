@@ -60,8 +60,9 @@
 
         <!-- Model Selection -->
         <div class="flex flex-wrap justify-center gap-3 mb-10">
-            <button class="model-tab active" data-model="2009-2013" onclick="showModel('2009-2013', this)">2009–2013</button>
+            <button class="model-tab active" data-model="2013" onclick="showModel('2013', this)">2013</button>
             <button class="model-tab" data-model="2019" onclick="showModel('2019', this)">2019</button>
+            <button class="model-tab" data-model="2023" onclick="showModel('2023', this)">2023</button>
         </div>
 
         <!-- Services Grid -->
@@ -86,85 +87,58 @@
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Modal kontaktowy (ukryty domyślnie) -->
-    <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm hidden">
-      <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-lg mx-auto p-8 animate-fade-in">
-        <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-400 hover:text-primary text-2xl" aria-label="Zamknij">
-          <i class="fas fa-times"></i>
-        </button>
-        <h2 class="text-2xl font-bold text-center mb-4">Skontaktuj się z nami</h2>
-        <form class="space-y-6" id="modal-contact-form">
-          <div>
-            <label for="modal-name" class="block text-sm font-medium text-gray-700">Imię i nazwisko</label>
-            <input type="text" id="modal-name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-email" class="block text-sm font-medium text-gray-700">Email</label>
-            <input type="email" id="modal-email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-phone" class="block text-sm font-medium text-gray-700">Telefon</label>
-            <input type="tel" id="modal-phone" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
-          </div>
-          <div>
-            <label for="modal-message" class="block text-sm font-medium text-gray-700">Wiadomość</label>
-            <textarea id="modal-message" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"></textarea>
-          </div>
-          <div>
-            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-              Wyślij wiadomość
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
     <!-- Load components script -->
     <script src="load-components.js"></script>
     
     <!-- JavaScript -->
     <script>
         // Pricing data for Mac Pro models
-        const macProPricing = {
-            '2009-2013': {
-                noise: '149 zł',
-                unresponsive: '249 zł',
-                startup: '149 zł',
-                display: '249 zł'
+        const macproPricing = {
+            '2013': {
+                water: '399 zł',
+                startup: '199 zł',
+                heating: '199 zł',
+                upgrade: '399 zł'
             },
             '2019': {
-                noise: '249 zł',
-                unresponsive: '349 zł',
-                startup: '149 zł',
-                display: '249 zł'
+                water: '499 zł',
+                startup: '199 zł',
+                heating: '199 zł',
+                upgrade: '499 zł'
+            },
+            '2023': {
+                water: '599 zł',
+                startup: '199 zł',
+                heating: '199 zł',
+                upgrade: '599 zł'
             }
         };
 
         // Services configuration
         const services = [
             {
-                icon: 'fas fa-volume-up',
-                title: 'Głośna praca',
-                description: 'Mac Pro',
-                key: 'noise'
+                icon: 'fas fa-water',
+                title: 'Zalanie',
+                description: 'Usługa serwisowa',
+                key: 'water'
             },
             {
                 icon: 'fas fa-power-off',
-                title: 'Brak reakcji',
-                description: 'Mac Pro',
-                key: 'unresponsive'
-            },
-            {
-                icon: 'fas fa-play',
                 title: 'Nie uruchamia się',
-                description: 'Mac Pro',
+                description: 'Usługa serwisowa',
                 key: 'startup'
             },
             {
-                icon: 'fas fa-eye-slash',
-                title: 'Brak obrazu',
-                description: 'Mac Pro',
-                key: 'display'
+                icon: 'fas fa-thermometer-half',
+                title: 'Nagrzewanie',
+                description: 'Usługa serwisowa',
+                key: 'heating'
+            },
+            {
+                icon: 'fas fa-arrow-up',
+                title: 'Modernizacja',
+                description: 'Usługa serwisowa',
+                key: 'upgrade'
             }
         ];
 
@@ -179,7 +153,7 @@
             button.classList.add('active');
 
             // Get pricing data for selected model
-            const pricing = macProPricing[modelKey];
+            const pricing = macproPricing[modelKey];
             if (!pricing) return;
 
             // Generate services HTML
@@ -187,8 +161,9 @@
                 <div class="bg-white p-6 rounded-xl shadow text-center">
                     <i class="${service.icon} text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">${service.title}</h3>
-                    <p class="text-gray-500 text-sm mb-4">${service.description} ${modelKey}</p>
-                    <button class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90 open-contact-modal">Skontaktuj się z nami</button>
+                    <p class="text-gray-500 text-sm mb-2">${service.description}</p>
+                    <p class="text-primary font-bold text-lg mb-4">${pricing[service.key]}</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
             `).join('');
 
@@ -220,53 +195,12 @@
                 mobileMenuButton.addEventListener('click', toggleMobileMenu);
             }
 
-            // Show default model (2009-2013)
-            const defaultButton = document.querySelector('[data-model="2009-2013"]');
+            // Show default model (2013)
+            const defaultButton = document.querySelector('[data-model="2013"]');
             if (defaultButton) {
-                showModel('2009-2013', defaultButton);
+                showModel('2013', defaultButton);
             }
         });
-
-        // MODAL KONTAKTOWY
-        function openContactModal() {
-          document.getElementById('contact-modal').classList.remove('hidden');
-          document.body.classList.add('overflow-hidden');
-        }
-        function closeContactModal() {
-          document.getElementById('contact-modal').classList.add('hidden');
-          document.body.classList.remove('overflow-hidden');
-        }
-        // Otwieranie modala po kliknięciu w .open-contact-modal
-        window.addEventListener('click', function(e) {
-          const btn = e.target.closest('.open-contact-modal');
-          if (btn) {
-            e.preventDefault();
-            openContactModal();
-          }
-        });
-        // Zamknięcie modala po kliknięciu w X lub poza modalem
-        document.addEventListener('click', function(e) {
-          const modal = document.getElementById('contact-modal');
-          if (!modal.classList.contains('hidden')) {
-            if (e.target.id === 'close-contact-modal' || (e.target === modal)) {
-              closeContactModal();
-            }
-          }
-        });
-        // Zamknięcie ESC
-        window.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') closeContactModal();
-        });
-        // Obsługa formularza w popupie
-        const modalForm = document.getElementById('modal-contact-form');
-        if (modalForm) {
-          modalForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
-            modalForm.reset();
-            closeContactModal();
-          });
-        }
     </script>
 </body>
 </html> 
