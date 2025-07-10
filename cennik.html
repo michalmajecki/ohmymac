@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik napraw – Oh my Mac!</title>
+    
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .logo-text {
+            font-family: 'Kaushan Script', cursive;
+            color: #2d73a5;
+        }
+        
+        .category-card {
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .category-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover .category-icon {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold mb-6">Cennik napraw</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Wybierz kategorię urządzenia i sprawdź szczegółowy cennik napraw. 
+                Oferujemy profesjonalne usługi serwisowe dla wszystkich urządzeń Apple.
+            </p>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- iPhone -->
+            <div class="category-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="category-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">iPhone</h3>
+                <p class="text-gray-600 mb-6">
+                    Naprawy iPhone od modeli 6 do najnowszego iPhone 16. 
+                    Wymiana ekranów, baterii, naprawa po zalaniu i wiele więcej.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Wymiana ekranu od 349 zł</div>
+                    <div>• Wymiana baterii od 139 zł</div>
+                    <div>• Naprawa po zalaniu od 99 zł</div>
+                </div>
+                <a href="cennik-iphone.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zobacz cennik iPhone
+                </a>
+            </div>
+
+            <!-- MacBook -->
+            <div class="category-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="category-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">MacBook</h3>
+                <p class="text-gray-600 mb-6">
+                    Serwis MacBook Pro wszystkich generacji. 
+                    Naprawy płyt głównych, wymiana baterii, czyszczenie po zalaniu.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Wymiana baterii od 449 zł</div>
+                    <div>• Naprawa po zalaniu od 199 zł</div>
+                    <div>• Diagnostyka problemów od 149 zł</div>
+                </div>
+                <a href="cennik-macbook.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zobacz cennik MacBook
+                </a>
+            </div>
+
+            <!-- iPad -->
+            <div class="category-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="category-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-tablet-alt"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">iPad</h3>
+                <p class="text-gray-600 mb-6">
+                    Naprawy iPad Pro wszystkich rozmiarów. 
+                    Wymiana ekranów, baterii, naprawa złączy ładowania.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Wymiana ekranu od 333 zł</div>
+                    <div>• Wymiana baterii od 111 zł</div>
+                    <div>• Naprawa po zalaniu od 149 zł</div>
+                </div>
+                <a href="cennik-ipad.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zobacz cennik iPad
+                </a>
+            </div>
+
+            <!-- iMac -->
+            <div class="category-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="category-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">iMac</h3>
+                <p class="text-gray-600 mb-6">
+                    Serwis iMac wszystkich rozmiarów. 
+                    Naprawy problemów z uruchamianiem, wymiana podzespołów.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Diagnostyka problemów od 149 zł</div>
+                    <div>• Naprawa po zalaniu od 249 zł</div>
+                    <div>• Wymiana podzespołów od 249 zł</div>
+                </div>
+                <a href="cennik-imac.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zobacz cennik iMac
+                </a>
+            </div>
+
+            <!-- Apple Watch -->
+            <div class="category-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="category-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Apple Watch</h3>
+                <p class="text-gray-600 mb-6">
+                    Naprawy Apple Watch wszystkich generacji. 
+                    Wymiana ekranów, baterii, naprawa po zalaniu.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Wymiana ekranu od 499 zł</div>
+                    <div>• Wymiana baterii od 199 zł</div>
+                    <div>• Naprawa po zalaniu od 149 zł</div>
+                </div>
+                <a href="cennik-watch.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zobacz cennik Apple Watch
+                </a>
+            </div>
+
+            <!-- Inne usługi -->
+            <div class="category-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="category-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Inne usługi</h3>
+                <p class="text-gray-600 mb-6">
+                    Specjalistyczne usługi serwisowe. 
+                    Odzysk danych, naprawa płyty głównej, wymiana sprzętu.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Odzysk danych - wycena indywidualna</div>
+                    <div>• Naprawa płyty głównej</div>
+                    <div>• Wymiana starego sprzętu</div>
+                </div>
+                <a href="cennik-inne.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zobacz inne usługi
+                </a>
+            </div>
+        </div>
+
+        <!-- Additional Categories -->
+        <div class="mt-16">
+            <h2 class="text-3xl font-bold text-center mb-12">Pozostałe urządzenia</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Mac Mini -->
+                <div class="bg-white rounded-xl shadow p-6 text-center">
+                    <i class="fas fa-server text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Mac Mini</h3>
+                    <p class="text-gray-600 text-sm mb-4">Naprawy Mac Mini wszystkich generacji</p>
+                    <a href="cennik-macmini.html" class="inline-block bg-gray-100 text-gray-800 px-6 py-2 rounded-full text-sm font-medium transition hover:bg-gray-200">
+                        Zobacz cennik
+                    </a>
+                </div>
+
+                <!-- Mac Pro -->
+                <div class="bg-white rounded-xl shadow p-6 text-center">
+                    <i class="fas fa-tower-observation text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Mac Pro</h3>
+                    <p class="text-gray-600 text-sm mb-4">Serwis Mac Pro - profesjonalne stacje robocze</p>
+                    <a href="cennik-macpro.html" class="inline-block bg-gray-100 text-gray-800 px-6 py-2 rounded-full text-sm font-medium transition hover:bg-gray-200">
+                        Zobacz cennik
+                    </a>
+                </div>
+
+                <!-- Apple TV -->
+                <div class="bg-white rounded-xl shadow p-6 text-center">
+                    <i class="fas fa-tv text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Apple TV</h3>
+                    <p class="text-gray-600 text-sm mb-4">Naprawy Apple TV wszystkich generacji</p>
+                    <a href="cennik-appletv.html" class="inline-block bg-gray-100 text-gray-800 px-6 py-2 rounded-full text-sm font-medium transition hover:bg-gray-200">
+                        Zobacz cennik
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="mt-20 text-center bg-white rounded-2xl shadow-lg p-12">
+            <h2 class="text-3xl font-bold mb-6">Nie widzisz swojego urządzenia?</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Skontaktuj się z nami, aby uzyskać indywidualną wycenę naprawy. 
+                Oferujemy bezpłatną diagnostykę i profesjonalne doradztwo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact" class="bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Skontaktuj się z nami
+                </a>
+                <a href="tel:+48123456789" class="bg-gray-100 text-gray-800 px-8 py-3 rounded-full font-medium transition hover:bg-gray-200">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    +48 123 456 789
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
+    <script src="load-components.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation on scroll for category cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all category cards
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html> 

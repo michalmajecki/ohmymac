@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje naprawy – Oh my Mac!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="main.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        'sans': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+    
+    <main class="max-w-2xl mx-auto px-4 py-20">
+        <h1 class="text-3xl font-bold text-center mb-4">Wypełnij formularz i sprawdź swoją naprawę</h1>
+        <p class="text-center text-gray-600 mb-10">Udostępniamy Ci narzędzie, dzięki któremu możesz na bieżąco
+            monitorować status swojego zgłoszenia, a także sprawdzić go po zrealizowanej naprawie.</p>
+
+        <form class="bg-white shadow-md rounded-xl p-6 space-y-6">
+            <div>
+                <label class="block text-sm font-medium mb-1" for="repair-id">Numer naprawy OhmyMac</label>
+                <input id="repair-id" name="repair-id" type="text" required placeholder="Np. OMM-001234"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-1" for="imei">Numer seryjny lub IMEI</label>
+                <input id="imei" name="imei" type="text" required placeholder="Np. F2LZC3ABC123"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" />
+            </div>
+
+            <div class="pt-4 text-center">
+                <button type="submit"
+                    class="bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-full transition">Podejrzyj
+                    swoją naprawę</button>
+            </div>
+        </form>
+    </main>
+    
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Load components script -->
+    <script src="load-components.js"></script>
+</body>
+
+</html>

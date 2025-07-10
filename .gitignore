@@ -1,0 +1,17 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Old files
+cennik-old.html
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp 

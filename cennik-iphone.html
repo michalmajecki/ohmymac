@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik iPhone – Oh my Mac!</title>
+    
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .logo-text {
+            font-family: 'Kaushan Script', cursive;
+            color: #2d73a5;
+        }
+        
+        .tab-btn {
+            @apply px-4 py-2 rounded-full text-sm font-medium transition border border-transparent bg-white text-gray-900 hover:border-primary hover:shadow hover:bg-primary/10;
+        }
+        
+        .tab-btn.active {
+            @apply bg-primary text-white border-primary shadow-md;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Page Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-6">Cennik napraw iPhone</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Wybierz model i sprawdź szczegóły usług. Ceny orientacyjne – dokładna wycena po diagnozie.
+            </p>
+        </div>
+
+        <!-- Model Selection -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <button class="model-tab active" data-model="16" onclick="showModel('16', this)">iPhone 16</button>
+            <button class="model-tab" data-model="15" onclick="showModel('15', this)">iPhone 15</button>
+            <button class="model-tab" data-model="14" onclick="showModel('14', this)">iPhone 14</button>
+            <button class="model-tab" data-model="13" onclick="showModel('13', this)">iPhone 13</button>
+            <button class="model-tab" data-model="12" onclick="showModel('12', this)">iPhone 12</button>
+            <button class="model-tab" data-model="SE" onclick="showModel('SE', this)">iPhone SE</button>
+            <button class="model-tab" data-model="X" onclick="showModel('X', this)">iPhone X / XR / XS</button>
+            <button class="model-tab" data-model="8" onclick="showModel('8', this)">iPhone 8 / 7 / 6</button>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-3 gap-6" id="servicesGrid">
+            <!-- Services will be loaded dynamically -->
+        </div>
+
+        <!-- Navigation to other cenniks -->
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-bold mb-6">Inne urządzenia</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="cennik-macbook.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">MacBook</a>
+                <a href="cennik-ipad.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPad</a>
+                <a href="cennik-imac.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iMac</a>
+                <a href="cennik-watch.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">Apple Watch</a>
+                <a href="cennik-inne.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">Inne usługi</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
+    <script src="load-components.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Pricing data for iPhone models
+        const iphonePricing = {
+            '16': {
+                screen: 'od 799 zł',
+                battery: 'od 299 zł',
+                water: 'od 249 zł',
+                charging: 'od 149 zł',
+                id: 'od 449 zł',
+                case: 'od 549 zł'
+            },
+            '15': {
+                screen: 'od 699 zł',
+                battery: 'od 279 zł',
+                water: 'od 199 zł',
+                charging: 'od 139 zł',
+                id: 'od 429 zł',
+                case: 'od 499 zł'
+            },
+            '14': {
+                screen: 'od 649 zł',
+                battery: 'od 249 zł',
+                water: 'od 179 zł',
+                charging: 'od 129 zł',
+                id: 'od 399 zł',
+                case: 'od 479 zł'
+            },
+            '13': {
+                screen: 'od 599 zł',
+                battery: 'od 229 zł',
+                water: 'od 149 zł',
+                charging: 'od 109 zł',
+                id: 'od 379 zł',
+                case: 'od 449 zł'
+            },
+            '12': {
+                screen: 'od 499 zł',
+                battery: 'od 199 zł',
+                water: 'od 149 zł',
+                charging: 'od 109 zł',
+                id: 'od 349 zł',
+                case: 'od 399 zł'
+            },
+            'SE': {
+                screen: 'od 349 zł',
+                battery: 'od 159 zł',
+                water: 'od 129 zł',
+                charging: 'od 89 zł',
+                id: 'od 149 zł',
+                case: 'od 299 zł'
+            },
+            'X': {
+                screen: 'od 449 zł',
+                battery: 'od 179 zł',
+                water: 'od 149 zł',
+                charging: 'od 99 zł',
+                id: 'od 299 zł',
+                case: 'od 399 zł'
+            },
+            '8': {
+                screen: 'od 349 zł',
+                battery: 'od 139 zł',
+                water: 'od 99 zł',
+                charging: 'od 89 zł',
+                id: 'od 149 zł',
+                case: 'od 349 zł'
+            }
+        };
+
+        // Services configuration
+        const services = [
+            {
+                icon: 'fas fa-mobile-alt',
+                title: 'Wymiana ekranu',
+                description: 'Oryginalny lub zamiennik',
+                key: 'screen'
+            },
+            {
+                icon: 'fas fa-battery-half',
+                title: 'Wymiana baterii',
+                description: 'Szybko i bezpiecznie',
+                key: 'battery'
+            },
+            {
+                icon: 'fas fa-water',
+                title: 'Naprawa po zalaniu',
+                description: 'Diagnoza i czyszczenie',
+                key: 'water'
+            },
+            {
+                icon: 'fas fa-bolt',
+                title: 'Problemy z ładowaniem',
+                description: 'Złącze, płyta główna',
+                key: 'charging'
+            },
+            {
+                icon: 'fas fa-fingerprint',
+                title: 'Face ID / Touch ID',
+                description: 'Przywracanie działania',
+                key: 'id'
+            },
+            {
+                icon: 'fas fa-tools',
+                title: 'Naprawa obudowy',
+                description: 'Wgniecenia, pęknięcia',
+                key: 'case'
+            }
+        ];
+
+        /**
+         * Shows services for selected iPhone model
+         * @param {string} modelKey - Model identifier
+         * @param {HTMLElement} button - Clicked button element
+         */
+        function showModel(modelKey, button) {
+            // Update active tab
+            document.querySelectorAll('.model-tab').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Get pricing data for selected model
+            const pricing = iphonePricing[modelKey];
+            if (!pricing) return;
+
+            // Generate services HTML
+            const servicesHTML = services.map(service => `
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <i class="${service.icon} text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">${service.title}</h3>
+                    <p class="text-gray-500 text-sm mb-4">${service.description}</p>
+                    <a href="index.html#contact" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">
+                        ${pricing[service.key]}
+                    </a>
+                </div>
+            `).join('');
+
+            // Update services grid
+            document.getElementById('servicesGrid').innerHTML = servicesHTML;
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show default model (iPhone 16)
+            const defaultButton = document.querySelector('[data-model="16"]');
+            if (defaultButton) {
+                showModel('16', defaultButton);
+            }
+        });
+    </script>
+</body>
+</html> 
