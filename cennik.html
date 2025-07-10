@@ -235,17 +235,50 @@
                 Oferujemy bezpłatną diagnostykę i profesjonalne doradztwo.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="index.html#contact" class="bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90 open-contact-modal">Skontaktuj się z nami</a>
-                <a href="tel:+48123456789" class="bg-gray-100 text-gray-800 px-8 py-3 rounded-full font-medium transition hover:bg-gray-200 open-contact-modal">
+                <button class="bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90 open-contact-modal">Skontaktuj się z nami</button>
+                <button class="bg-gray-100 text-gray-800 px-8 py-3 rounded-full font-medium transition hover:bg-gray-200 open-contact-modal">
                     <i class="fas fa-phone-alt mr-2"></i>
                     +48 123 456 789
-                </a>
+                </button>
             </div>
         </div>
     </main>
 
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
+
+    <!-- Modal kontaktowy (ukryty domyślnie) -->
+    <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm hidden">
+      <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-lg mx-auto p-8 animate-fade-in">
+        <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-400 hover:text-primary text-2xl" aria-label="Zamknij">
+          <i class="fas fa-times"></i>
+        </button>
+        <h2 class="text-2xl font-bold text-center mb-4">Skontaktuj się z nami</h2>
+        <form class="space-y-6" id="modal-contact-form">
+          <div>
+            <label for="modal-name" class="block text-sm font-medium text-gray-700">Imię i nazwisko</label>
+            <input type="text" id="modal-name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="modal-email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="modal-email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="modal-phone" class="block text-sm font-medium text-gray-700">Telefon</label>
+            <input type="tel" id="modal-phone" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+          </div>
+          <div>
+            <label for="modal-message" class="block text-sm font-medium text-gray-700">Wiadomość</label>
+            <textarea id="modal-message" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+              Wyślij wiadomość
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <!-- Load components script -->
     <script src="load-components.js"></script>
@@ -277,6 +310,47 @@
                 observer.observe(card);
             });
         });
+
+        // MODAL KONTAKTOWY
+        function openContactModal() {
+          document.getElementById('contact-modal').classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+        }
+        function closeContactModal() {
+          document.getElementById('contact-modal').classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        }
+        // Otwieranie modala po kliknięciu w .open-contact-modal
+        window.addEventListener('click', function(e) {
+          const btn = e.target.closest('.open-contact-modal');
+          if (btn) {
+            e.preventDefault();
+            openContactModal();
+          }
+        });
+        // Zamknięcie modala po kliknięciu w X lub poza modalem
+        document.addEventListener('click', function(e) {
+          const modal = document.getElementById('contact-modal');
+          if (!modal.classList.contains('hidden')) {
+            if (e.target.id === 'close-contact-modal' || (e.target === modal)) {
+              closeContactModal();
+            }
+          }
+        });
+        // Zamknięcie ESC
+        window.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeContactModal();
+        });
+        // Obsługa formularza w popupie
+        const modalForm = document.getElementById('modal-contact-form');
+        if (modalForm) {
+          modalForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
+            modalForm.reset();
+            closeContactModal();
+          });
+        }
     </script>
 </body>
 </html> 

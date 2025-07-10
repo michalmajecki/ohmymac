@@ -69,10 +69,10 @@
                         Naprawiamy wszystkie urządzenia marki Apple z zachowaniem najwyższych standardów jakości.
                     </p>
                     <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="#"
+                        <button
                             class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-colors open-contact-modal">
                             Napisz do nas
-                        </a>
+                        </button>
                         <a href="#"
                             class="border border-gray-300 hover:border-primary text-gray-900 px-6 py-3 rounded-full font-medium transition-colors"
                             onclick="event.preventDefault(); scrollToSection('services')">
@@ -153,7 +153,7 @@
             </div>
 
             <div class="mt-12 grid md:grid-cols-3 gap-8">
-                <a href="zgloszenie.html" class="block bg-gray-50 p-8 rounded-xl hover:shadow-lg transition open-contact-modal">
+                <button class="block bg-gray-50 p-8 rounded-xl hover:shadow-lg transition open-contact-modal w-full text-left">
                     <div
                         class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6 mx-auto">
                         <i class="fas fa-headset text-2xl"></i>
@@ -163,7 +163,7 @@
                         W zależności od problemu z którym do nas przybywasz chcemy możliwie mocno ułatwić Ci proces
                         przygotowania zgłoszenia
                     </p>
-                </a>
+                </button>
 
                 <a href="naprawy.html" class="block bg-gray-50 p-8 rounded-xl hover:shadow-lg transition">
                     <div
@@ -456,7 +456,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-center mb-2">${service.title}</h3>
                         <p class="text-gray-600 text-center mb-6">${serviceBackDescriptions[service.title] || ''}</p>
-                        <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-full font-medium transition hover:bg-primary/90 open-contact-modal">Skontaktuj się</a>
+                        <button class="bg-primary text-white px-6 py-3 rounded-full font-medium transition hover:bg-primary/90 open-contact-modal">Skontaktuj się</button>
                     </div>
                 </div>
             `;
@@ -508,7 +508,7 @@
           }
         });
         // Zamknięcie modala po kliknięciu w X lub poza modalem
-        window.addEventListener('click', function(e) {
+        document.addEventListener('click', function(e) {
           const modal = document.getElementById('contact-modal');
           if (!modal.classList.contains('hidden')) {
             if (e.target.id === 'close-contact-modal' || (e.target === modal)) {
