@@ -46,3 +46,26 @@ details[open] summary .rotate-icon {
 	border-color: #2d73a5;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Mobile menu styles */
+#mobile-menu-overlay {
+	backdrop-filter: blur(4px);
+}
+
+#mobile-menu {
+	animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+	overflow: hidden;
+}

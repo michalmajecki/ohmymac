@@ -26,18 +26,52 @@ async function loadComponents() {
  */
 function initializeMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    
     if (mobileMenuButton) {
-        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+    }
+    
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
+    
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function(e) {
+            if (e.target === mobileMenuOverlay) {
+                closeMobileMenu();
+            }
+        });
+    }
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMobileMenu();
+        }
+    });
+}
+
+/**
+ * Opens mobile menu
+ */
+function openMobileMenu() {
+    const overlay = document.getElementById('mobile-menu-overlay');
+    if (overlay) {
+        overlay.classList.remove('hidden');
+        document.body.classList.add('menu-open'); // Prevent background scroll
     }
 }
 
 /**
- * Toggles mobile menu visibility
+ * Closes mobile menu
  */
-function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    if (menu) {
-        menu.classList.toggle('hidden');
+function closeMobileMenu() {
+    const overlay = document.getElementById('mobile-menu-overlay');
+    if (overlay) {
+        overlay.classList.add('hidden');
+        document.body.classList.remove('menu-open'); // Restore background scroll
     }
 }
 
