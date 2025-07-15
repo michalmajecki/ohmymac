@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik napraw AirPods - Oh My Mac</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .series-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .series-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .series-card h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .series-card p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .series-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .series-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="cennik.html">Cennik</a> > AirPods
+        </div>
+        
+        <h1>Cennik napraw AirPods</h1>
+        <p>Wybierz serię swoich słuchawek AirPods, aby zobaczyć szczegółowy cennik napraw:</p>
+        
+        <div class="series-grid">
+            <a href="cennik-airpods-standard.html" class="series-card">
+                <h3>AirPods</h3>
+                <p>Standardowe słuchawki AirPods</p>
+            </a>
+            
+            <a href="cennik-airpods-pro.html" class="series-card">
+                <h3>AirPods Pro</h3>
+                <p>Słuchawki z aktywną redukcją szumów</p>
+            </a>
+            
+            <a href="cennik-airpods-max.html" class="series-card">
+                <h3>AirPods Max</h3>
+                <p>Nauszne słuchawki premium</p>
+            </a>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Nie znalazłeś swojego modelu?</h2>
+            <p>Skontaktuj się z nami, aby uzyskać indywidualną wycenę</p>
+            <a href="kontakt.html" class="cta-button">Skontaktuj się</a>
+        </div>
+    </main>
+    
+    <div id="footer"></div>
+    
+    <script src="load-components.js"></script>
+</body>
+</html> 

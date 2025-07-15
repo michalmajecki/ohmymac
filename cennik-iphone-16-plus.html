@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik iPhone 16 Plus – Oh my Mac!</title>
+    
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .logo-text {
+            font-family: 'Kaushan Script', cursive;
+            color: #2d73a5;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-6">Cennik napraw iPhone 16 Plus</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Szczegółowy cennik usług serwisowych dla iPhone 16 Plus. 
+                Ceny orientacyjne – dokładna wycena po diagnozie.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Wymiana ekranu -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                <p class="text-gray-500 text-sm mb-2">Oryginalny lub zamiennik</p>
+                <p class="text-primary font-bold text-lg mb-4">od 849 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Wymiana baterii -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                <p class="text-gray-500 text-sm mb-2">Szybko i bezpiecznie</p>
+                <p class="text-primary font-bold text-lg mb-4">od 319 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Naprawa po zalaniu -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                <p class="text-primary font-bold text-lg mb-4">od 269 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Problemy z ładowaniem -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Face ID / Touch ID -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-fingerprint text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Face ID / Touch ID</h3>
+                <p class="text-gray-500 text-sm mb-2">Przywracanie działania</p>
+                <p class="text-primary font-bold text-lg mb-4">od 449 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Naprawa obudowy -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                <p class="text-primary font-bold text-lg mb-4">od 599 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-16 bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">Informacje dodatkowe</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Co zawiera naprawa?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Bezpłatna diagnostyka</li>
+                        <li>• Oryginalne lub wysokiej jakości części</li>
+                        <li>• Gwarancja na naprawę</li>
+                        <li>• Szybki czas realizacji</li>
+                        <li>• Bezpłatne testowanie po naprawie</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Jak wygląda proces?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Kontakt i wstępna wycena</li>
+                        <li>• Diagnostyka urządzenia</li>
+                        <li>• Zatwierdzenie naprawy</li>
+                        <li>• Wykonanie naprawy</li>
+                        <li>• Testowanie i odbiór</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-bold mb-6">Inne warianty iPhone 16</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="cennik-iphone-16-standard.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPhone 16</a>
+                <a href="cennik-iphone-16-pro.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPhone 16 Pro</a>
+                <a href="cennik-iphone-16-pro-max.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPhone 16 Pro Max</a>
+            </div>
+        </div>
+
+        <!-- Back navigation -->
+        <div class="mt-8 text-center space-y-4">
+            <div>
+                <a href="cennik-iphone-16.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do iPhone 16
+                </a>
+            </div>
+            <div>
+                <a href="cennik-iphone.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do iPhone
+                </a>
+            </div>
+            <div>
+                <a href="cennik.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do głównego cennika
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
+    <script src="load-components.js"></script>
+</body>
+</html> 
