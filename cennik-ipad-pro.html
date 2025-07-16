@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cennik napraw MacBook Air 13" – Oh my Mac!</title>
+    <title>Cennik napraw iPad Pro – Oh my Mac!</title>
     
     <!-- CSS -->
     <link href="main.css" rel="stylesheet">
@@ -53,9 +53,9 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <!-- Page Header -->
         <div class="text-center mb-16">
-            <h1 class="text-4xl font-bold mb-6">Cennik napraw MacBook Air 13"</h1>
+            <h1 class="text-4xl font-bold mb-6">Cennik napraw iPad Pro</h1>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Szczegółowy cennik usług serwisowych dla MacBook Air 13" wszystkich generacji. 
+                Szczegółowy cennik usług serwisowych dla iPad Pro wszystkich rozmiarów i generacji. 
                 Ceny orientacyjne – dokładna wycena po diagnozie.
             </p>
         </div>
@@ -64,52 +64,42 @@
         <div class="mb-12">
             <h2 class="text-2xl font-bold mb-6 text-center">Wybierz model</h2>
             <div class="flex flex-wrap justify-center gap-4">
-                <button class="bg-primary text-white px-6 py-3 rounded-full font-medium transition hover:bg-primary/90" onclick="showModel('m4-2025')">M4 (2025)</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('m3-2024')">M3 (2024)</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('m2-2022')">M2 (2022)</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('m1-2020')">M1 (2020)</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('retina-2020')">Retina (2020)</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('retina-2019')">Retina (2019)</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('retina-2018')">Retina (2018)</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('2017')">2017</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('2015')">2015</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('2014')">2014</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('2013')">2013</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('2012')">2012</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('2011')">2011</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('2010')">2010</button>
-                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('2009')">2009</button>
+                <button class="bg-primary text-white px-6 py-3 rounded-full font-medium transition hover:bg-primary/90" onclick="showModel('13-m4')">13 cali (M4)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('11-m4')">11 cali (M4)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('12-9-6')">12.9 cala (6. generacji)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('12-9-5')">12.9 cala (5. generacji)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('12-9-4')">12.9 cala (4. generacji)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('12-9-3')">12.9 cala (3. generacji)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('12-9-2')">12.9 cala (2. generacji)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('12-9-1')">12.9 cala</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('11-4')">11 cali (4. generacji)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('11-3')">11 cali (3. generacji)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('11-2')">11 cali (2. generacji)</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('11-1')">11 cali</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('10-5')">10.5 cala</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('9-7')">9.7 cala</button>
             </div>
         </div>
 
-        <!-- MacBook Air 13" M4 2025 Services -->
-        <div id="m4-2025-services" class="services-section">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (13‑calowy, M4, 2025 r.)</h3>
+        <!-- iPad Pro 13 cali M4 Services -->
+        <div id="13-m4-services" class="services-section">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 13 cali (M4)</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 1299 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
                 <!-- Wymiana baterii -->
                 <div class="service-card bg-white p-6 rounded-xl shadow text-center">
                     <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
                     <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 649 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 549 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 1299 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 599 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -118,7 +108,7 @@
                     <i class="fas fa-water text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
                     <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 399 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -127,7 +117,67 @@
                     <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
                     <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 199 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 349 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 449 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 379 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- iPad Pro 11 cali M4 Services -->
+        <div id="11-m4-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 11 cali (M4)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 1099 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 549 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 379 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 329 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -139,37 +189,37 @@
                     <p class="text-primary font-bold text-lg mb-4">od 399 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 349 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
             </div>
         </div>
 
-        <!-- MacBook Air 13" M3 2024 Services -->
-        <div id="m3-2024-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (13‑calowy, M3, 2024 r.)</h3>
+        <!-- iPad Pro 12.9 cala 6. generacji Services -->
+        <div id="12-9-6-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 12.9 cala (6. generacji)</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 1199 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
                 <!-- Wymiana baterii -->
                 <div class="service-card bg-white p-6 rounded-xl shadow text-center">
                     <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
                     <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 599 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 499 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 1199 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 579 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -178,7 +228,7 @@
                     <i class="fas fa-water text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
                     <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 279 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 389 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -187,7 +237,307 @@
                     <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
                     <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 189 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 339 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 429 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 359 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- iPad Pro 12.9 cala 5. generacji Services -->
+        <div id="12-9-5-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 12.9 cala (5. generacji)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 1149 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 569 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 379 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 329 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 419 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 349 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- iPad Pro 12.9 cala 4. generacji Services -->
+        <div id="12-9-4-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 12.9 cala (4. generacji)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 1099 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 559 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 369 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 319 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 409 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 339 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- iPad Pro 12.9 cala 3. generacji Services -->
+        <div id="12-9-3-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 12.9 cala (3. generacji)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 1049 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 549 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 359 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 309 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 399 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 329 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- iPad Pro 12.9 cala 2. generacji Services -->
+        <div id="12-9-2-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 12.9 cala (2. generacji)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 999 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 539 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 349 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 389 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 319 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- iPad Pro 12.9 cala 1. generacji Services -->
+        <div id="12-9-1-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 12.9 cala (1. generacji)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 949 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 529 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 339 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 289 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -199,37 +549,37 @@
                     <p class="text-primary font-bold text-lg mb-4">od 379 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 309 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
             </div>
         </div>
 
-        <!-- MacBook Air 13" M2 2022 Services -->
-        <div id="m2-2022-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (M2, 2022 r.)</h3>
+        <!-- iPad Pro 11 cali 4. generacji Services -->
+        <div id="11-4-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 11 cali (4. generacji)</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 1049 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
                 <!-- Wymiana baterii -->
                 <div class="service-card bg-white p-6 rounded-xl shadow text-center">
                     <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
                     <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 549 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 449 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 1099 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 539 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -238,7 +588,7 @@
                     <i class="fas fa-water text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
                     <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 259 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 369 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -247,7 +597,187 @@
                     <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
                     <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 179 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 319 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 389 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 339 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- iPad Pro 11 cali 3. generacji Services -->
+        <div id="11-3-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 11 cali (3. generacji)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 999 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 529 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 359 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 309 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 379 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 329 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- iPad Pro 11 cali 2. generacji Services -->
+        <div id="11-2-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 11 cali (2. generacji)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 949 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 519 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 349 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 369 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 319 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- iPad Pro 11 cali 1. generacji Services -->
+        <div id="11-1-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 11 cali (1. generacji)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 899 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 509 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 339 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 289 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -259,13 +789,31 @@
                     <p class="text-primary font-bold text-lg mb-4">od 359 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 309 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
             </div>
         </div>
 
-        <!-- MacBook Air 13" M1 2020 Services -->
-        <div id="m1-2020-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (M1, 2020 r.)</h3>
+        <!-- iPad Pro 10.5 cala Services -->
+        <div id="10-5-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 10.5 cala</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 849 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
                 <!-- Wymiana baterii -->
                 <div class="service-card bg-white p-6 rounded-xl shadow text-center">
                     <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
@@ -275,30 +823,12 @@
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 399 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 999 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
                 <!-- Naprawa po zalaniu -->
                 <div class="service-card bg-white p-6 rounded-xl shadow text-center">
                     <i class="fas fa-water text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
                     <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 239 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 329 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -307,7 +837,7 @@
                     <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
                     <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 169 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 279 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -316,16 +846,34 @@
                     <i class="fas fa-tools text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
                     <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 339 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 349 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z dźwiękiem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
             </div>
         </div>
 
-        <!-- MacBook Air 13" Retina 2020 Services -->
-        <div id="retina-2020-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (Retina, 2020 r.)</h3>
+        <!-- iPad Pro 9.7 cala Services -->
+        <div id="9-7-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">iPad Pro 9.7 cala</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tablet-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 799 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
                 <!-- Wymiana baterii -->
                 <div class="service-card bg-white p-6 rounded-xl shadow text-center">
                     <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
@@ -335,99 +883,21 @@
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 379 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 949 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
                 <!-- Naprawa po zalaniu -->
                 <div class="service-card bg-white p-6 rounded-xl shadow text-center">
                     <i class="fas fa-water text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
                     <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 229 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 159 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
                     <p class="text-primary font-bold text-lg mb-4">od 319 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" Retina 2019 Services -->
-        <div id="retina-2019-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (Retina, 2019 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 459 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 359 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 899 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 219 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
 
                 <!-- Problemy z ładowaniem -->
                 <div class="service-card bg-white p-6 rounded-xl shadow text-center">
                     <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
                     <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 269 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
@@ -436,547 +906,16 @@
                     <i class="fas fa-tools text-3xl text-primary mb-3"></i>
                     <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
                     <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" Retina 2018 Services -->
-        <div id="retina-2018-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (Retina, 2018 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 439 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
                     <p class="text-primary font-bold text-lg mb-4">od 339 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
 
-                <!-- Wymiana ekranu -->
+                <!-- Problemy z dźwiękiem -->
                 <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 849 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 209 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 139 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 279 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" 2017 Services -->
-        <div id="2017-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (2017 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 419 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 319 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 799 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 199 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 129 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 259 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" 2015 Services -->
-        <div id="2015-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (2015 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 399 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 749 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 189 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 119 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 239 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" 2014 Services -->
-        <div id="2014-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (2014 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 379 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 279 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 699 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 179 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 109 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 219 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" 2013 Services -->
-        <div id="2013-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (2013 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 359 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 259 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 649 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 169 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 99 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 199 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" 2012 Services -->
-        <div id="2012-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (2012 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 339 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 239 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 599 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 159 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 89 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 179 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" 2011 Services -->
-        <div id="2011-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (2011 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 319 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 219 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 549 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 79 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 159 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" 2010 Services -->
-        <div id="2010-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (2010 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 199 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 499 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 139 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 69 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 139 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- MacBook Air 13" 2009 Services -->
-        <div id="2009-services" class="services-section hidden">
-            <h3 class="text-2xl font-bold mb-8 text-center">MacBook Air (2009 r.)</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wymiana baterii -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 279 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana klawiatury -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-keyboard text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana klawiatury</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalna klawiatura</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 179 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Wymiana ekranu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-desktop text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 449 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa po zalaniu -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
-                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 129 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Problemy z ładowaniem -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
-                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 59 zł</p>
-                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
-                </div>
-
-                <!-- Naprawa obudowy -->
-                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
-                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
-                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
-                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
-                    <p class="text-primary font-bold text-lg mb-4">od 119 zł</p>
+                    <i class="fas fa-volume-up text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z dźwiękiem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Głośniki, mikrofon</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 289 zł</p>
                     <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
                 </div>
             </div>
@@ -1011,23 +950,19 @@
 
         <!-- Navigation -->
         <div class="mt-16 text-center">
-            <h2 class="text-2xl font-bold mb-6">Inne rozmiary MacBook Air</h2>
+            <h2 class="text-2xl font-bold mb-6">Inne serie iPad</h2>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="cennik-macbook-air-11.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">MacBook Air 11"</a>
-                <a href="cennik-macbook-air-15.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">MacBook Air 15"</a>
+                <a href="cennik-ipad-mini.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPad mini</a>
+                <a href="cennik-ipad-standard.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPad</a>
+                <a href="cennik-ipad-air.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPad Air</a>
             </div>
         </div>
 
         <!-- Back navigation -->
         <div class="mt-8 text-center space-y-4">
             <div>
-                <a href="cennik-macbook-air.html" class="text-primary hover:text-primary/80 transition">
-                    ← Powrót do MacBook Air
-                </a>
-            </div>
-            <div>
-                <a href="cennik-macbook.html" class="text-primary hover:text-primary/80 transition">
-                    ← Powrót do MacBook
+                <a href="cennik-ipad.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do iPad
                 </a>
             </div>
             <div>

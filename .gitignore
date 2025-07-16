@@ -15,3 +15,7 @@ cennik-old.html
 # Temporary files
 *.tmp
 *.temp 
+
+# Data files
+*.csv
+*.xlsx 

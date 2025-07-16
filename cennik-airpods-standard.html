@@ -1,267 +1,177 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cennik napraw AirPods - Oh My Mac</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Cennik AirPods – Oh my Mac!</title>
+    
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Custom Styles -->
     <style>
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+        .logo-text {
+            font-family: 'Kaushan Script', cursive;
+            color: #2d73a5;
         }
         
         .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
         }
         
-        .service-card h3 {
-            color: #333;
-            margin: 0 0 1rem 0;
-            font-size: 1.3rem;
-        }
-        
-        .service-card p {
-            color: #666;
-            margin: 0 0 1.5rem 0;
-            line-height: 1.6;
-        }
-        
-        .price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #007AFF;
-            margin: 0;
-        }
-        
-        .breadcrumb {
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .breadcrumb a {
-            color: #007AFF;
-            text-decoration: none;
-        }
-        
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        
-        .model-section {
-            margin: 3rem 0;
-        }
-        
-        .model-section h2 {
-            color: #333;
-            border-bottom: 2px solid #007AFF;
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .service-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .service-card {
-                padding: 1.5rem;
-            }
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
-<body>
-    <div id="header"></div>
-    
-    <main class="container">
-        <div class="breadcrumb">
-            <a href="cennik.html">Cennik</a> > <a href="cennik-airpods.html">AirPods</a> > Standardowe
+
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-6">Cennik napraw AirPods</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Szczegółowy cennik usług serwisowych dla AirPods. 
+                Ceny orientacyjne – dokładna wycena po diagnozie.
+            </p>
         </div>
-        
-        <h1>Cennik napraw AirPods</h1>
-        <p>Szczegółowy cennik napraw standardowych słuchawek AirPods:</p>
-        
-        <div class="model-section">
-            <h2>AirPods (4. generacji)</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Wymiana baterii</h3>
-                    <p>Kompleksowa wymiana baterii w obu słuchawkach i etui</p>
-                    <p class="price">299 zł</p>
+
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Naprawa słuchawek -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-headphones text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Naprawa słuchawek</h3>
+                <p class="text-gray-500 text-sm mb-2">Wymiana elementów audio</p>
+                <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Wymiana baterii -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                <p class="text-gray-500 text-sm mb-2">Nowa bateria</p>
+                <p class="text-primary font-bold text-lg mb-4">od 99 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Naprawa obudowy -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                <p class="text-primary font-bold text-lg mb-4">od 199 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Naprawa po zalaniu -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                <p class="text-gray-500 text-sm mb-2">Czyszczenie i naprawa</p>
+                <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Problemy z łącznością -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-wifi text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Problemy z łącznością</h3>
+                <p class="text-gray-500 text-sm mb-2">Bluetooth, chip</p>
+                <p class="text-primary font-bold text-lg mb-4">od 99 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+
+            <!-- Diagnostyka -->
+            <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                <i class="fas fa-search text-3xl text-primary mb-3"></i>
+                <h3 class="font-semibold text-lg mb-1">Diagnostyka</h3>
+                <p class="text-gray-500 text-sm mb-2">Kompleksowa diagnostyka</p>
+                <p class="text-primary font-bold text-lg mb-4">50 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-16 bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">Informacje dodatkowe</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Co zawiera naprawa?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Bezpłatna diagnostyka</li>
+                        <li>• Oryginalne lub wysokiej jakości części</li>
+                        <li>• Gwarancja na naprawę</li>
+                        <li>• Szybki czas realizacji</li>
+                        <li>• Bezpłatne testowanie po naprawie</li>
+                    </ul>
                 </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa głośników</h3>
-                    <p>Naprawa lub wymiana głośników w słuchawkach</p>
-                    <p class="price">199 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana mikrofonu</h3>
-                    <p>Wymiana mikrofonu w słuchawkach</p>
-                    <p class="price">149 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa etui</h3>
-                    <p>Naprawa mechanicznych uszkodzeń etui</p>
-                    <p class="price">179 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana obudowy</h3>
-                    <p>Wymiana uszkodzonej obudowy słuchawek</p>
-                    <p class="price">249 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Diagnostyka</h3>
-                    <p>Bezpłatna diagnostyka problemów</p>
-                    <p class="price">0 zł</p>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Jak wygląda proces?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Kontakt i wstępna wycena</li>
+                        <li>• Diagnostyka urządzenia</li>
+                        <li>• Zatwierdzenie naprawy</li>
+                        <li>• Wykonanie naprawy</li>
+                        <li>• Testowanie i odbiór</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        
-        <div class="model-section">
-            <h2>AirPods (3. generacji)</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Wymiana baterii</h3>
-                    <p>Kompleksowa wymiana baterii w obu słuchawkach i etui</p>
-                    <p class="price">279 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa głośników</h3>
-                    <p>Naprawa lub wymiana głośników w słuchawkach</p>
-                    <p class="price">189 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana mikrofonu</h3>
-                    <p>Wymiana mikrofonu w słuchawkach</p>
-                    <p class="price">139 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa etui</h3>
-                    <p>Naprawa mechanicznych uszkodzeń etui</p>
-                    <p class="price">169 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana obudowy</h3>
-                    <p>Wymiana uszkodzonej obudowy słuchawek</p>
-                    <p class="price">229 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Diagnostyka</h3>
-                    <p>Bezpłatna diagnostyka problemów</p>
-                    <p class="price">0 zł</p>
-                </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-bold mb-6">Inne serie AirPods</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="cennik-airpods-max.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">AirPods Max</a>
+                <a href="cennik-airpods-pro.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">AirPods Pro</a>
             </div>
         </div>
-        
-        <div class="model-section">
-            <h2>AirPods (2. generacji)</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Wymiana baterii</h3>
-                    <p>Kompleksowa wymiana baterii w obu słuchawkach i etui</p>
-                    <p class="price">259 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa głośników</h3>
-                    <p>Naprawa lub wymiana głośników w słuchawkach</p>
-                    <p class="price">179 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana mikrofonu</h3>
-                    <p>Wymiana mikrofonu w słuchawkach</p>
-                    <p class="price">129 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa etui</h3>
-                    <p>Naprawa mechanicznych uszkodzeń etui</p>
-                    <p class="price">159 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana obudowy</h3>
-                    <p>Wymiana uszkodzonej obudowy słuchawek</p>
-                    <p class="price">209 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Diagnostyka</h3>
-                    <p>Bezpłatna diagnostyka problemów</p>
-                    <p class="price">0 zł</p>
-                </div>
+
+        <!-- Back navigation -->
+        <div class="mt-8 text-center space-y-4">
+            <div>
+                <a href="cennik-airpods.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do AirPods
+                </a>
             </div>
-        </div>
-        
-        <div class="model-section">
-            <h2>AirPods (1. generacji)</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Wymiana baterii</h3>
-                    <p>Kompleksowa wymiana baterii w obu słuchawkach i etui</p>
-                    <p class="price">239 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa głośników</h3>
-                    <p>Naprawa lub wymiana głośników w słuchawkach</p>
-                    <p class="price">169 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana mikrofonu</h3>
-                    <p>Wymiana mikrofonu w słuchawkach</p>
-                    <p class="price">119 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa etui</h3>
-                    <p>Naprawa mechanicznych uszkodzeń etui</p>
-                    <p class="price">149 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana obudowy</h3>
-                    <p>Wymiana uszkodzonej obudowy słuchawek</p>
-                    <p class="price">199 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Diagnostyka</h3>
-                    <p>Bezpłatna diagnostyka problemów</p>
-                    <p class="price">0 zł</p>
-                </div>
+            <div>
+                <a href="cennik.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do głównego cennika
+                </a>
             </div>
-        </div>
-        
-        <div class="cta-section">
-            <h2>Potrzebujesz pomocy?</h2>
-            <p>Skontaktuj się z nami, aby uzyskać indywidualną wycenę lub umówić się na naprawę</p>
-            <a href="kontakt.html" class="cta-button">Skontaktuj się</a>
         </div>
     </main>
-    
-    <div id="footer"></div>
-    
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
     <script src="load-components.js"></script>
 </body>
 </html> 

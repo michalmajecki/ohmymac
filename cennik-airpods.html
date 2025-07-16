@@ -1,110 +1,190 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cennik napraw AirPods - Oh My Mac</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Cennik AirPods – Oh my Mac!</title>
+    
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Custom Styles -->
     <style>
-        .series-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+        .logo-text {
+            font-family: 'Kaushan Script', cursive;
+            color: #2d73a5;
         }
         
-        .series-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            color: white;
-            text-decoration: none;
+        .category-card {
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .series-card:hover {
+        .category-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
-        .series-card h3 {
-            margin: 0 0 1rem 0;
-            font-size: 1.5rem;
-            font-weight: 600;
+        .category-icon {
+            transition: all 0.3s ease;
         }
         
-        .series-card p {
-            margin: 0;
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-        
-        .breadcrumb {
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .breadcrumb a {
-            color: #007AFF;
-            text-decoration: none;
-        }
-        
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .series-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .series-card {
-                padding: 1.5rem;
-            }
+        .category-card:hover .category-icon {
+            transform: scale(1.1);
         }
     </style>
 </head>
-<body>
-    <div id="header"></div>
-    
-    <main class="container">
-        <div class="breadcrumb">
-            <a href="cennik.html">Cennik</a> > AirPods
+
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-6">Cennik napraw AirPods</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Wybierz serię AirPods i sprawdź szczegółowy cennik napraw. 
+                Oferujemy profesjonalne usługi serwisowe dla wszystkich modeli AirPods.
+            </p>
         </div>
-        
-        <h1>Cennik napraw AirPods</h1>
-        <p>Wybierz serię swoich słuchawek AirPods, aby zobaczyć szczegółowy cennik napraw:</p>
-        
-        <div class="series-grid">
-            <a href="cennik-airpods-standard.html" class="series-card">
-                <h3>AirPods</h3>
-                <p>Standardowe słuchawki AirPods</p>
-            </a>
-            
-            <a href="cennik-airpods-pro.html" class="series-card">
-                <h3>AirPods Pro</h3>
-                <p>Słuchawki z aktywną redukcją szumów</p>
-            </a>
-            
-            <a href="cennik-airpods-max.html" class="series-card">
-                <h3>AirPods Max</h3>
-                <p>Nauszne słuchawki premium</p>
-            </a>
+
+        <!-- AirPods Series Grid -->
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- AirPods Max -->
+            <div class="category-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="category-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">AirPods Max</h3>
+                <p class="text-gray-600 mb-6">
+                    Najnowsze słuchawki AirPods Max i AirPods Max 2. 
+                    Kompleksowe naprawy z oryginalnymi częściami.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• AirPods Max 2</div>
+                    <div>• AirPods Max</div>
+                    <div>• Naprawa od 299 zł</div>
+                </div>
+                <a href="cennik-airpods-max.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zobacz cennik AirPods Max
+                </a>
+            </div>
+
+            <!-- AirPods Pro -->
+            <div class="category-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="category-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">AirPods Pro</h3>
+                <p class="text-gray-600 mb-6">
+                    Modele AirPods Pro i AirPods Pro 2. 
+                    Szybkie naprawy z gwarancją jakości.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• AirPods Pro 2</div>
+                    <div>• AirPods Pro</div>
+                    <div>• Naprawa od 199 zł</div>
+                </div>
+                <a href="cennik-airpods-pro.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zobacz cennik AirPods Pro
+                </a>
+            </div>
+
+            <!-- AirPods -->
+            <div class="category-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="category-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">AirPods</h3>
+                <p class="text-gray-600 mb-6">
+                    Modele AirPods wszystkich generacji. 
+                    Profesjonalne naprawy w krótkim czasie.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• AirPods 4 / 3 / 2 / 1</div>
+                    <div>• Wszystkie generacje</div>
+                    <div>• Naprawa od 149 zł</div>
+                </div>
+                <a href="cennik-airpods-standard.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zobacz cennik AirPods
+                </a>
+            </div>
         </div>
-        
-        <div class="cta-section">
-            <h2>Nie znalazłeś swojego modelu?</h2>
-            <p>Skontaktuj się z nami, aby uzyskać indywidualną wycenę</p>
-            <a href="kontakt.html" class="cta-button">Skontaktuj się</a>
+
+        <!-- Additional Info -->
+        <div class="mt-16 bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">Informacje dodatkowe</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Co zawiera naprawa?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Bezpłatna diagnostyka</li>
+                        <li>• Oryginalne lub wysokiej jakości części</li>
+                        <li>• Gwarancja na naprawę</li>
+                        <li>• Szybki czas realizacji</li>
+                        <li>• Bezpłatne testowanie po naprawie</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Jak wygląda proces?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Kontakt i wstępna wycena</li>
+                        <li>• Diagnostyka urządzenia</li>
+                        <li>• Zatwierdzenie naprawy</li>
+                        <li>• Wykonanie naprawy</li>
+                        <li>• Testowanie i odbiór</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-bold mb-6">Inne urządzenia</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="cennik-iphone.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPhone</a>
+                <a href="cennik-macbook.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">MacBook</a>
+                <a href="cennik-ipad.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iPad</a>
+                <a href="cennik-imac.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">iMac</a>
+                <a href="cennik-watch.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">Apple Watch</a>
+                <a href="cennik-inne.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">Inne usługi</a>
+            </div>
+        </div>
+
+        <!-- Back navigation -->
+        <div class="mt-8 text-center space-y-4">
+            <div>
+                <a href="cennik.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do głównego cennika
+                </a>
+            </div>
         </div>
     </main>
-    
-    <div id="footer"></div>
-    
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
     <script src="load-components.js"></script>
 </body>
 </html> 

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik napraw Apple Watch Ultra – Oh my Mac!</title>
+    
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .logo-text {
+            font-family: 'Kaushan Script', cursive;
+            color: #2d73a5;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-6">Cennik napraw Apple Watch Ultra</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Szczegółowy cennik usług serwisowych dla Apple Watch Ultra wszystkich generacji. 
+                Ceny orientacyjne – dokładna wycena po diagnozie.
+            </p>
+        </div>
+
+        <!-- Model Selection -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-center">Wybierz model</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-primary text-white px-6 py-3 rounded-full font-medium transition hover:bg-primary/90" onclick="showModel('ultra-2')">Apple Watch Ultra 2</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('ultra-1')">Apple Watch Ultra</button>
+            </div>
+        </div>
+
+        <!-- Apple Watch Ultra 2 Services -->
+        <div id="ultra-2-services" class="services-section">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Ultra 2</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 899 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 399 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 699 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 199 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Ultra Services -->
+        <div id="ultra-1-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Ultra</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 799 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 349 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 599 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 179 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 129 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 269 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-16 bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">Informacje dodatkowe</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Co zawiera naprawa?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Bezpłatna diagnostyka</li>
+                        <li>• Oryginalne lub wysokiej jakości części</li>
+                        <li>• Gwarancja na naprawę</li>
+                        <li>• Szybki czas realizacji</li>
+                        <li>• Bezpłatne testowanie po naprawie</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Jak wygląda proces?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Kontakt i wstępna wycena</li>
+                        <li>• Diagnostyka urządzenia</li>
+                        <li>• Zatwierdzenie naprawy</li>
+                        <li>• Wykonanie naprawy</li>
+                        <li>• Testowanie i odbiór</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-bold mb-6">Inne serie Apple Watch</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="cennik-watch-series.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">Apple Watch Series</a>
+                <a href="cennik-watch-se.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">Apple Watch SE</a>
+            </div>
+        </div>
+
+        <!-- Back navigation -->
+        <div class="mt-8 text-center space-y-4">
+            <div>
+                <a href="cennik-watch.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do Apple Watch
+                </a>
+            </div>
+            <div>
+                <a href="cennik.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do głównego cennika
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
+    <script src="load-components.js"></script>
+    
+    <!-- Model switching script -->
+    <script>
+        function showModel(model) {
+            // Hide all service sections
+            document.querySelectorAll('.services-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected model
+            document.getElementById(model + '-services').classList.remove('hidden');
+            
+            // Update button styles
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.classList.remove('bg-primary', 'text-white');
+                button.classList.add('bg-white', 'text-primary');
+            });
+            
+            // Highlight selected button
+            event.target.classList.remove('bg-white', 'text-primary');
+            event.target.classList.add('bg-primary', 'text-white');
+        }
+    </script>
+</body>
+</html> 

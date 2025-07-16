@@ -1,226 +1,255 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cennik napraw Mac Pro - Oh My Mac</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Cennik napraw Mac Pro – Oh my Mac!</title>
+    
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Custom Styles -->
     <style>
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+        .logo-text {
+            font-family: 'Kaushan Script', cursive;
+            color: #2d73a5;
         }
         
         .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
         }
         
-        .service-card h3 {
-            color: #333;
-            margin: 0 0 1rem 0;
-            font-size: 1.3rem;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
-        .service-card p {
-            color: #666;
-            margin: 0 0 1.5rem 0;
-            line-height: 1.6;
+        .service-icon {
+            transition: all 0.3s ease;
         }
         
-        .price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #007AFF;
-            margin: 0;
-        }
-        
-        .breadcrumb {
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .breadcrumb a {
-            color: #007AFF;
-            text-decoration: none;
-        }
-        
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        
-        .model-section {
-            margin: 3rem 0;
-        }
-        
-        .model-section h2 {
-            color: #333;
-            border-bottom: 2px solid #007AFF;
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .service-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .service-card {
-                padding: 1.5rem;
-            }
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
         }
     </style>
 </head>
-<body>
-    <div id="header"></div>
-    
-    <main class="container">
-        <div class="breadcrumb">
-            <a href="cennik.html">Cennik</a> > <a href="cennik-mac.html">Mac</a> > Mac Pro
+
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Breadcrumb -->
+        <div class="mb-8">
+            <nav class="text-sm text-gray-600">
+                <a href="cennik.html" class="text-primary hover:text-primary/80">Cennik</a>
+                <span class="mx-2">/</span>
+                <span class="text-gray-500">Mac Pro</span>
+            </nav>
         </div>
-        
-        <h1>Cennik napraw Mac Pro</h1>
-        <p>Szczegółowy cennik napraw Mac Pro:</p>
-        
-        <div class="model-section">
-            <h2>Mac Pro (2023 r.)</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Wymiana dysku SSD</h3>
-                    <p>Wymiana uszkodzonego dysku SSD</p>
-                    <p class="price">899 zł</p>
+
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-6">Cennik napraw Mac Pro</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Profesjonalne naprawy Mac Pro - najwyższej klasy stacji roboczych. 
+                Wymiana podzespołów, naprawa po zalaniu i diagnostyka problemów.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Wymiana procesora -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="service-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-microchip"></i>
                 </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana pamięci RAM</h3>
-                    <p>Wymiana lub rozszerzenie pamięci RAM</p>
-                    <p class="price">499 zł</p>
+                <h3 class="text-2xl font-bold mb-4">Wymiana procesora</h3>
+                <p class="text-gray-600 mb-6">
+                    Wymiana procesora Intel Xeon. 
+                    Upgrade na nowszy model procesora.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Mac Pro 2019: 1999 zł</div>
+                    <div>• Mac Pro 2013: 1799 zł</div>
+                    <div>• Mac Pro 2012: 1599 zł</div>
                 </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa płyty głównej</h3>
-                    <p>Naprawa uszkodzonej płyty głównej</p>
-                    <p class="price">1499 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zamów naprawę
+                </a>
+            </div>
+
+            <!-- Wymiana pamięci RAM -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="service-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-memory"></i>
                 </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana zasilacza</h3>
-                    <p>Wymiana uszkodzonego zasilacza</p>
-                    <p class="price">699 zł</p>
+                <h3 class="text-2xl font-bold mb-4">Wymiana pamięci RAM</h3>
+                <p class="text-gray-600 mb-6">
+                    Rozszerzenie lub wymiana pamięci RAM. 
+                    Zwiększenie wydajności systemu.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Mac Pro 2019: 599 zł</div>
+                    <div>• Mac Pro 2013: 499 zł</div>
+                    <div>• Mac Pro 2012: 399 zł</div>
                 </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa po zalaniu</h3>
-                    <p>Kompleksowa naprawa po zalaniu wodą</p>
-                    <p class="price">999 zł</p>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zamów naprawę
+                </a>
+            </div>
+
+            <!-- Naprawa płyty głównej -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="service-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-server"></i>
                 </div>
-                
-                <div class="service-card">
-                    <h3>Diagnostyka</h3>
-                    <p>Bezpłatna diagnostyka problemów</p>
-                    <p class="price">0 zł</p>
+                <h3 class="text-2xl font-bold mb-4">Naprawa płyty głównej</h3>
+                <p class="text-gray-600 mb-6">
+                    Kompleksowa naprawa uszkodzonej płyty głównej. 
+                    Diagnostyka i wymiana komponentów.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Mac Pro 2019: 1499 zł</div>
+                    <div>• Mac Pro 2013: 1299 zł</div>
+                    <div>• Mac Pro 2012: 1099 zł</div>
                 </div>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zamów naprawę
+                </a>
+            </div>
+
+            <!-- Wymiana karty graficznej -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="service-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-tv"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Wymiana karty graficznej</h3>
+                <p class="text-gray-600 mb-6">
+                    Wymiana uszkodzonej karty graficznej. 
+                    Upgrade na nowszą kartę.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Mac Pro 2019: 899 zł</div>
+                    <div>• Mac Pro 2013: 799 zł</div>
+                    <div>• Mac Pro 2012: 699 zł</div>
+                </div>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zamów naprawę
+                </a>
+            </div>
+
+            <!-- Naprawa po zalaniu -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="service-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Naprawa po zalaniu</h3>
+                <p class="text-gray-600 mb-6">
+                    Kompleksowa naprawa po zalaniu wodą. 
+                    Czyszczenie i naprawa uszkodzonych komponentów.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Mac Pro 2019: 1299 zł</div>
+                    <div>• Mac Pro 2013: 1099 zł</div>
+                    <div>• Mac Pro 2012: 999 zł</div>
+                </div>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Zamów naprawę
+                </a>
+            </div>
+
+            <!-- Diagnostyka -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 text-center">
+                <div class="service-icon text-6xl text-primary mb-6">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Diagnostyka</h3>
+                <p class="text-gray-600 mb-6">
+                    Bezpłatna diagnostyka problemów. 
+                    Identyfikacja przyczyny usterki.
+                </p>
+                <div class="space-y-2 mb-6 text-sm text-gray-500">
+                    <div>• Kompleksowa diagnostyka</div>
+                    <div>• Raport z usterek</div>
+                    <div>• Bezpłatna wycena</div>
+                </div>
+                <a href="kontakt.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">
+                    Umów diagnostykę
+                </a>
             </div>
         </div>
-        
-        <div class="model-section">
-            <h2>Mac Pro (2019 r.)</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Wymiana dysku SSD</h3>
-                    <p>Wymiana uszkodzonego dysku SSD</p>
-                    <p class="price">849 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana pamięci RAM</h3>
-                    <p>Wymiana lub rozszerzenie pamięci RAM</p>
-                    <p class="price">479 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa płyty głównej</h3>
-                    <p>Naprawa uszkodzonej płyty głównej</p>
-                    <p class="price">1399 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana zasilacza</h3>
-                    <p>Wymiana uszkodzonego zasilacza</p>
-                    <p class="price">649 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa po zalaniu</h3>
-                    <p>Kompleksowa naprawa po zalaniu wodą</p>
-                    <p class="price">949 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Diagnostyka</h3>
-                    <p>Bezpłatna diagnostyka problemów</p>
-                    <p class="price">0 zł</p>
-                </div>
+
+        <!-- Contact Section -->
+        <div class="mt-20 text-center bg-white rounded-2xl shadow-lg p-12">
+            <h2 class="text-3xl font-bold mb-6">Nie znalazłeś swojej usługi?</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Skontaktuj się z nami, aby uzyskać indywidualną wycenę naprawy Mac Pro. 
+                Oferujemy bezpłatną diagnostykę i profesjonalne doradztwo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="kontakt.html" class="bg-primary text-white px-8 py-3 rounded-full font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                <a href="tel:+48123456789" class="bg-gray-100 text-gray-800 px-8 py-3 rounded-full font-medium transition hover:bg-gray-200">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    +48 123 456 789
+                </a>
             </div>
-        </div>
-        
-        <div class="model-section">
-            <h2>Mac Pro (2013 r.)</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>Wymiana dysku SSD</h3>
-                    <p>Wymiana uszkodzonego dysku SSD</p>
-                    <p class="price">799 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana pamięci RAM</h3>
-                    <p>Wymiana lub rozszerzenie pamięci RAM</p>
-                    <p class="price">459 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa płyty głównej</h3>
-                    <p>Naprawa uszkodzonej płyty głównej</p>
-                    <p class="price">1299 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Wymiana zasilacza</h3>
-                    <p>Wymiana uszkodzonego zasilacza</p>
-                    <p class="price">599 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Naprawa po zalaniu</h3>
-                    <p>Kompleksowa naprawa po zalaniu wodą</p>
-                    <p class="price">899 zł</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Diagnostyka</h3>
-                    <p>Bezpłatna diagnostyka problemów</p>
-                    <p class="price">0 zł</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="cta-section">
-            <h2>Potrzebujesz pomocy?</h2>
-            <p>Skontaktuj się z nami, aby uzyskać indywidualną wycenę lub umówić się na naprawę</p>
-            <a href="kontakt.html" class="cta-button">Skontaktuj się</a>
         </div>
     </main>
-    
-    <div id="footer"></div>
-    
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
     <script src="load-components.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation on scroll for service cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all service cards
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html> 

@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik napraw Apple Watch Series – Oh my Mac!</title>
+    
+    <!-- CSS -->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d73a5',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        .logo-text {
+            font-family: 'Kaushan Script', cursive;
+            color: #2d73a5;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900 bg-gray-50">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-6">Cennik napraw Apple Watch Series</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Szczegółowy cennik usług serwisowych dla Apple Watch Series wszystkich generacji. 
+                Ceny orientacyjne – dokładna wycena po diagnozie.
+            </p>
+        </div>
+
+        <!-- Generation Selection -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-center">Wybierz generację</h2>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="bg-primary text-white px-6 py-3 rounded-full font-medium transition hover:bg-primary/90" onclick="showGeneration('series-10', event)">Series 10</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showGeneration('series-9', event)">Series 9</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showGeneration('series-8', event)">Series 8</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showGeneration('series-7', event)">Series 7</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showGeneration('series-6', event)">Series 6</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showGeneration('series-5', event)">Series 5</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showGeneration('series-4', event)">Series 4</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showGeneration('series-3', event)">Series 3</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showGeneration('series-2', event)">Series 2</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showGeneration('series-1', event)">Series 1</button>
+            </div>
+        </div>
+
+        <!-- Series 10 Selection -->
+        <div id="series-10-selection" class="mb-12">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 10 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-10-42', event)">Koperta 42 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-10-46', event)">Koperta 46 mm</button>
+            </div>
+        </div>
+
+        <!-- Series 9 Selection -->
+        <div id="series-9-selection" class="mb-12 hidden">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 9 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-9-41', event)">Koperta 41 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-9-45', event)">Koperta 45 mm</button>
+            </div>
+        </div>
+
+        <!-- Series 8 Selection -->
+        <div id="series-8-selection" class="mb-12 hidden">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 8 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-8-41', event)">Koperta 41 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-8-45', event)">Koperta 45 mm</button>
+            </div>
+        </div>
+
+        <!-- Series 7 Selection -->
+        <div id="series-7-selection" class="mb-12 hidden">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 7 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-7-41', event)">Koperta 41 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-7-45', event)">Koperta 45 mm</button>
+            </div>
+        </div>
+
+        <!-- Series 6 Selection -->
+        <div id="series-6-selection" class="mb-12 hidden">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 6 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-6-40', event)">Koperta 40 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-6-44', event)">Koperta 44 mm</button>
+            </div>
+        </div>
+
+        <!-- Series 5 Selection -->
+        <div id="series-5-selection" class="mb-12 hidden">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 5 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-5-40', event)">Koperta 40 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-5-44', event)">Koperta 44 mm</button>
+            </div>
+        </div>
+
+        <!-- Series 4 Selection -->
+        <div id="series-4-selection" class="mb-12 hidden">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 4 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-4-40', event)">Koperta 40 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-4-44', event)">Koperta 44 mm</button>
+            </div>
+        </div>
+
+        <!-- Series 3 Selection -->
+        <div id="series-3-selection" class="mb-12 hidden">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 3 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-3-38', event)">Koperta 38 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-3-42', event)">Koperta 42 mm</button>
+            </div>
+        </div>
+
+        <!-- Series 2 Selection -->
+        <div id="series-2-selection" class="mb-12 hidden">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 2 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-2-38', event)">Koperta 38 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-2-42', event)">Koperta 42 mm</button>
+            </div>
+        </div>
+
+        <!-- Series 1 Selection -->
+        <div id="series-1-selection" class="mb-12 hidden">
+            <h3 class="text-xl font-bold mb-6 text-center">Series 1 - Wybierz rozmiar koperty</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-1-38', event)">Koperta 38 mm</button>
+                <button class="bg-white text-primary px-6 py-3 rounded-full font-medium transition hover:bg-gray-50" onclick="showModel('series-1-42', event)">Koperta 42 mm</button>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 10 42mm Services -->
+        <div id="series-10-42-services" class="services-section">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 10 (42 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 699 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 549 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 179 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 129 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 249 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 10 46mm Services -->
+        <div id="series-10-46-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 10 (46 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 749 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 319 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 599 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 189 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 139 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 269 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 9 41mm Services -->
+        <div id="series-9-41-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 9 (41 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 649 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 289 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 499 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 169 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 119 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 239 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 9 45mm Services -->
+        <div id="series-9-45-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 9 (45 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 699 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 309 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 549 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 179 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 129 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 259 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 8 41mm Services -->
+        <div id="series-8-41-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 8 (41 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 599 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 279 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 449 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 159 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 109 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 229 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 8 45mm Services -->
+        <div id="series-8-45-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 8 (45 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 649 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 499 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 169 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 119 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 249 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 7 41mm Services -->
+        <div id="series-7-41-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 7 (41 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 579 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 269 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 429 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 99 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 219 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 7 45mm Services -->
+        <div id="series-7-45-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 7 (45 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 629 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 289 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 479 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 159 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 109 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 239 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 6 40mm Services -->
+        <div id="series-6-40-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 6 (40 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 549 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 259 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 399 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 139 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 99 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 209 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 6 44mm Services -->
+        <div id="series-6-44-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 6 (44 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 599 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 279 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 449 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 109 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 229 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 5 40mm Services -->
+        <div id="series-5-40-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 5 (40 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 529 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 249 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 379 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 129 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 89 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 199 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 5 44mm Services -->
+        <div id="series-5-44-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 5 (44 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 579 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 269 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 429 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 139 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 99 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 219 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 4 40mm Services -->
+        <div id="series-4-40-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 4 (40 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 509 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 239 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 359 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 119 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 79 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 189 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 4 44mm Services -->
+        <div id="series-4-44-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 4 (44 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 559 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 259 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 409 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 129 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 89 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 209 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 3 38mm Services -->
+        <div id="series-3-38-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 3 (38 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 449 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 219 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 109 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 69 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 169 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 3 42mm Services -->
+        <div id="series-3-42-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 3 (42 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 499 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 239 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 349 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 119 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 79 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 189 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 2 38mm Services -->
+        <div id="series-2-38-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 2 (38 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 399 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 199 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 249 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 99 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 59 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 2 42mm Services -->
+        <div id="series-2-42-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 2 (42 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 449 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 219 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 299 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 109 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 69 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 169 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 1 38mm Services -->
+        <div id="series-1-38-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 1 (38 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 379 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 189 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 229 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 89 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 49 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 129 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apple Watch Series 1 42mm Services -->
+        <div id="series-1-42-services" class="services-section hidden">
+            <h3 class="text-2xl font-bold mb-8 text-center">Apple Watch Series 1 (42 mm)</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Wymiana ekranu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana ekranu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalny panel LCD</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 429 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana baterii -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-battery-half text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana baterii</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna bateria Apple</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 209 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Wymiana koperty -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-cog text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Wymiana koperty</h3>
+                    <p class="text-gray-500 text-sm mb-2">Oryginalna koperta</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 279 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa po zalaniu -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-water text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa po zalaniu</h3>
+                    <p class="text-gray-500 text-sm mb-2">Diagnoza i czyszczenie</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 99 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Problemy z ładowaniem -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-bolt text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Problemy z ładowaniem</h3>
+                    <p class="text-gray-500 text-sm mb-2">Złącze, płyta główna</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 59 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+
+                <!-- Naprawa obudowy -->
+                <div class="service-card bg-white p-6 rounded-xl shadow text-center">
+                    <i class="fas fa-tools text-3xl text-primary mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Naprawa obudowy</h3>
+                    <p class="text-gray-500 text-sm mb-2">Wymiana elementów</p>
+                    <p class="text-primary font-bold text-lg mb-4">od 149 zł</p>
+                    <a href="kontakt.html" class="inline-block bg-primary text-white px-4 py-2 rounded-full text-sm font-medium transition hover:bg-primary/90">Skontaktuj się z nami</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-16 bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">Informacje dodatkowe</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Co zawiera naprawa?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Bezpłatna diagnostyka</li>
+                        <li>• Oryginalne lub wysokiej jakości części</li>
+                        <li>• Gwarancja na naprawę</li>
+                        <li>• Szybki czas realizacji</li>
+                        <li>• Bezpłatne testowanie po naprawie</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Jak wygląda proces?</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Kontakt i wstępna wycena</li>
+                        <li>• Diagnostyka urządzenia</li>
+                        <li>• Zatwierdzenie naprawy</li>
+                        <li>• Wykonanie naprawy</li>
+                        <li>• Testowanie i odbiór</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-bold mb-6">Inne serie Apple Watch</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="cennik-watch-ultra.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">Apple Watch Ultra</a>
+                <a href="cennik-watch-se.html" class="bg-white px-6 py-3 rounded-full shadow hover:shadow-md transition">Apple Watch SE</a>
+            </div>
+        </div>
+
+        <!-- Back navigation -->
+        <div class="mt-8 text-center space-y-4">
+            <div>
+                <a href="cennik-watch.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do Apple Watch
+                </a>
+            </div>
+            <div>
+                <a href="cennik.html" class="text-primary hover:text-primary/80 transition">
+                    ← Powrót do głównego cennika
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load components script -->
+    <script src="load-components.js"></script>
+    
+    <!-- Model switching script -->
+    <script>
+        // Show default section on page load
+        window.onload = function() {
+            // Show Series 10 42mm by default
+            const defaultSection = document.getElementById('series-10-42-services');
+            if (defaultSection) {
+                defaultSection.classList.remove('hidden');
+            }
+        };
+        
+        function showGeneration(generation, event) {
+            // Hide all selection sections
+            const selectionSections = [
+                'series-10-selection', 'series-9-selection', 'series-8-selection', 
+                'series-7-selection', 'series-6-selection', 'series-5-selection',
+                'series-4-selection', 'series-3-selection', 'series-2-selection', 'series-1-selection'
+            ];
+            
+            selectionSections.forEach(section => {
+                document.getElementById(section).classList.add('hidden');
+            });
+            
+            // Show selected generation
+            document.getElementById(generation + '-selection').classList.remove('hidden');
+            
+            // Hide all service sections
+            document.querySelectorAll('.services-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Update generation button styles
+            const genButtons = document.querySelectorAll('[onclick^="showGeneration"]');
+            genButtons.forEach(button => {
+                button.classList.remove('bg-primary', 'text-white');
+                button.classList.add('bg-white', 'text-primary');
+            });
+            
+            // Highlight selected generation button
+            event.target.classList.remove('bg-white', 'text-primary');
+            event.target.classList.add('bg-primary', 'text-white');
+
+            // Wybierz domyślny rozmiar koperty: 40 mm, jeśli nie ma to 41 mm, jeśli nie ma to 42 mm
+            let defaultModel = generation + '-40';
+            if (!document.getElementById(defaultModel + '-services')) {
+                defaultModel = generation + '-41';
+                if (!document.getElementById(defaultModel + '-services')) {
+                    defaultModel = generation + '-42';
+                }
+            }
+            // Znajdź przycisk domyślnego rozmiaru
+            const defaultButton = document.querySelector('#' + generation + '-selection [onclick*="' + defaultModel + '"]');
+            if (defaultButton) {
+                showModel(defaultModel, {target: defaultButton});
+            }
+        }
+        
+        function showModel(model, event) {
+            // Hide all service sections
+            document.querySelectorAll('.services-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected model
+            const serviceSection = document.getElementById(model + '-services');
+            if (serviceSection) {
+                serviceSection.classList.remove('hidden');
+            }
+            
+            // Update size button styles
+            const sizeButtons = document.querySelectorAll('[onclick^="showModel"]');
+            sizeButtons.forEach(button => {
+                button.classList.remove('bg-primary', 'text-white');
+                button.classList.add('bg-white', 'text-primary');
+            });
+            
+            // Highlight selected size button
+            event.target.classList.remove('bg-white', 'text-primary');
+            event.target.classList.add('bg-primary', 'text-white');
+        }
+    </script>
+</body>
+</html> 
